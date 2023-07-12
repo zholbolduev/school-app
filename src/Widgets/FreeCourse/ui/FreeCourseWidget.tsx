@@ -1,4 +1,4 @@
-import { SearchForm } from "../../../Entities/Search/ui/SearchForm";
+import { SearchForm } from "../../../Entities/Search/SearchForm";
 
 export const FreeCourseWidget = () => {
     return (

@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
+import './SearchForm.scss';
 
 export const SearchForm = () => {
 
@@ -12,9 +13,10 @@ export const SearchForm = () => {
     return (
         <div className='searchForm'>
             <form>
-                <div>
-                    <CiSearch />
+                <div className='searchInputField'>
+                    <CiSearch className={`searchIcon ${ value.length > 0 && 'searchIcon-active'}`} />
                     <input 
+                        className='inputField'
                         type="text" 
                         placeholder="Поиск" 
                         value={value}

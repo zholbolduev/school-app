@@ -1,0 +1,43 @@
+$enabledBorderColor: #E0E5ED;
+$focusedBorderColor: #2B59C3;
+
+.searchForm {
+    width: 280px;
+    
+    .searchInputField {
+        width: 100%;
+        height: 100%;
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        border: 1px solid $enabledBorderColor;
+        border-radius: 10px;
+        background-color: #fff;
+
+        .searchIcon {
+            font-size: 22px;
+            color: #767E8C;
+            margin-right: 4px;
+        }
+
+        .searchIcon-active {
+            color: black;
+        }
+
+        .inputField {
+            border: none;
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .inputField:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    .searchInputField:focus-within {
+        border: 1px solid $focusedBorderColor;
+    }
+}
