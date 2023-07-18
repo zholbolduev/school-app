@@ -1,9 +1,9 @@
-import { FreeCourseWidget } from "../../../Widgets/FreeCourse/ui/FreeCourseWidget";
+import { FreeCourseWidget } from "../../../Widgets/FreeCourse/FreeCourseWidget";
 import "./FreeCoursePage.scss";
 
 const FreeCoursePage = () => {
 	return (
-		<div>
+		<div className="freeCoursePage">
 			<FreeCourseWidget />
 		</div>
 	);

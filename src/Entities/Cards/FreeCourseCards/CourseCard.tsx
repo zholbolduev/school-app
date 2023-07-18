@@ -1,11 +1,13 @@
-import { CourseCardProps } from "../model/types/CourseCard.types";
+import { IFreeCourse } from "./FreeCourse.types";
 import { Link } from "react-router-dom";
+import "./CourseCard.scss";
+import React from "react";
 
-export const CourseCard = ({ title, duration, videos, isFavorite, to}: CourseCardProps) => {
+export const CourseCard: React.FC<IFreeCourse> = ({ id, title, duration, videos, isFavorite }) => {
 
     return (
         <div className="courseCard">
-            <Link to={ to } >
+            <Link to={ id } >
                 <div className="courseCard-details">
                     <div className="courseCard-title">
                         <h3>{ title }</h3>
