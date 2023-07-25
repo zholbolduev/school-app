@@ -1,6 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
-import courseReducer from "../Features/PaidCourse/PaidCourseSlice";
+import courseReducer from "../Pages/Courses/PaidCoursePage/PaidCourseSlice/PaidCourseSlice";
 
 const rootReducers = combineReducers({
   newCourseReducer,
