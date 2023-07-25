@@ -1,0 +1,21 @@
+.addCourse {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  &__wrapper {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    select {
+      margin: 5px 0;
+      width: 100%;
+      height: 40px;
+    }
+    input {
+      margin: 5px 0;
+      width: 100%;
+      height: 40px;
+    }
+  }
+}
