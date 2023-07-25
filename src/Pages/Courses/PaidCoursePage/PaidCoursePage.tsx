@@ -1,4 +1,5 @@
 import "./PaidCoursePage.scss";
+<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../App/rootStore";
 import { useEffect } from "react";
@@ -235,6 +236,11 @@ const PaidCoursePage = () => {
       )} */}
     </div>
   );
+=======
+
+const PaidCoursePage = () => {
+  return <div>PaidCoursePage</div>;
+>>>>>>> ac3f97df0bc6b2ac2a3fb5a2f638ada880eba809
 };
 
 export default PaidCoursePage;

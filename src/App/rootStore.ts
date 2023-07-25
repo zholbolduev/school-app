@@ -1,10 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
-<<<<<<< HEAD
-import courseReducer from "../Pages/Courses/PaidCoursePage/PaidCourseSlice/PaidCourseSlice";
-=======
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
->>>>>>> 33c4771a5bbb3cf0ec421d96af26f3a2bd88452e
 
 const rootReducers = combineReducers({
   newCourseReducer,
