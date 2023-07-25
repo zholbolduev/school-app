@@ -1,7 +1,10 @@
+import { FreeDetailsWidget } from "../../../Widgets/FreeCourseDetails/FreeDetailsWidget";
 import "./CourseVideoPage.scss";
 
 const CourseVideoPage = () => {
-  return <div>CourseVideoPage</div>;
+  return (
+    <FreeDetailsWidget />
+  );
 };
 
 export default CourseVideoPage;
