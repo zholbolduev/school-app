@@ -14,6 +14,8 @@ import AddCourse from "../Features/AddCourse/AddCourse";
 import AdminCommentList from "../Widgets/AdminWidgets/AdminCommentList/AdminCommentList";
 import ContactList from "../Widgets/AdminWidgets/ConctactList/ContactList";
 import RequestList from "../Widgets/AdminWidgets/RequestList/RequestList";
+import AdminContactList from "../Widgets/AdminWidgets/AdminConctactList/AdminContactList";
+import AdminRequestList from "../Widgets/AdminWidgets/AdminRequestList/AdminRequestList";
 
 const AppRouter = () => {
   return (
@@ -25,6 +27,8 @@ const AppRouter = () => {
         <Route path="comment-list" element={<AdminCommentList />} />
         <Route path="contact-list" element={<ContactList />} />
         <Route path="request-list" element={<RequestList />} />
+        <Route path="contact-list" element={<AdminContactList />} />
+        <Route path="request-list" element={<AdminRequestList />} />
       </Route>
       <Route path="/profile-page" element={<ProfilePage />} />
       <Route

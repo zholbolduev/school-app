@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
+import freeCourseReducer from "../Widgets/FreeCourse/FreeCourseList/FreeCourseSlice";
 
 const rootReducers = combineReducers({
-  newCourseReducer,
   [contactListApi.reducerPath]: contactListApi.reducer,
+  newCourseReducer,
+  freeCourseReducer,
 });
 
 export const setupStore = () => {
