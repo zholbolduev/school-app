@@ -1,5 +1,5 @@
-import { Video } from "../../Entities/Video/Video";
-import { VideoPlaylist } from "../../Entities/Video/VideoPlaylist";
+import { Video } from "../../Entities/CourseDetailsEntities/Video/Video";
+import { VideoPlaylist } from "../../Entities/CourseDetailsEntities/Video/VideoPlaylist";
 import { TestButton } from "../../Shared/Buttons/TestButton";
 
 export const FreeDetailsWidget = () => {
