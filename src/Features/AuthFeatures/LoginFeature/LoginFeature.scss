@@ -1,0 +1,13 @@
+.loginFeature {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  &__wrapper {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
