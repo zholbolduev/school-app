@@ -1,9 +1,10 @@
-import "./PaidCoursePage.scss";
-<<<<<<< HEAD
+import { SearchForm } from "../../Entities/Search/SearchForm";
+import { FreeCourseList } from "./FreeCoursesList/FreeCoursesList";
+import "./FreeCourseWidget.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../App/rootStore";
-import { useEffect } from "react";
-import { fetchCourse } from "./PaidCourseSlice/PaidCourseSlice";
+// import { useEffect } from "react";
+// import { fetchCourse } from "./PaidCourseSlice/PaidCourseSlice";
 
 const PaidCoursePage = () => {
   const courseId = 123;
@@ -28,8 +29,14 @@ const PaidCoursePage = () => {
   //   return <div>Error: {error}</div>;
   // }
 
+
+export const FreeCourseWidget = () => {
   return (
-    <div>
+    <div className="freeCourseWidget">
+      <SearchForm />
+      <FreeCourseList />
+
+      <div>
       <nav className="nav">
         <div>
           <img
@@ -235,12 +242,7 @@ const PaidCoursePage = () => {
         </div>
       )} */}
     </div>
+    </div>
   );
-=======
-
-const PaidCoursePage = () => {
-  return <div>PaidCoursePage</div>;
->>>>>>> ac3f97df0bc6b2ac2a3fb5a2f638ada880eba809
 };
 
-export default PaidCoursePage;

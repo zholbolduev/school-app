@@ -2,10 +2,10 @@ import { Navigate, Route, Routes } from "react-router";
 import LandingPage from "../Pages/LandingPage/LandingPage";
 import AdminPage from "../Pages/AdminPage/AdminPage";
 import ProfilePage from "../Pages/ProfilePage/ProfilePage";
-import CoursesTimetablePage from "../Pages/Courses/CoursesTimetablePage/CoursesTimetablePage";
-import FreeCoursePage from "../Pages/Courses/FreeCoursePage/FreeCoursePage";
-import PaidCoursePage from "../Pages/Courses/PaidCoursePage/PaidCoursePage";
-import CourseVideoPage from "../Pages/Courses/CourseVideoPage/CourseVideoPage";
+import CoursesTimetablePage from "../Pages/CoursesPage/CoursesTimetablePage/CoursesTimetablePage";
+import FreeCoursePage from "../Pages/CoursesPage/CoursePage";
+import PaidCoursePage from "../Pages/CoursesPage/PaidCoursePage/PaidCoursePage";
+import CourseVideoPage from "../Pages/CoursesPage/CourseVideoPage/CourseVideoPage";
 import RegisterPage from "../Pages/Auth/RegisterPage/RegisterPage";
 import LoginPage from "../Pages/Auth/LoginPage/LoginPage";
 import ForgotPasswordPage from "../Pages/Auth/ForgotPasswordPage/ForgotPasswordPage";
@@ -37,6 +37,7 @@ const AppRouter = () => {
       <Route path="/course-video-page" element={<CourseVideoPage />} />
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/login-page" element={<LoginPage />} />
+
       <Route path="/forgot-password-page" element={<ForgotPasswordPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

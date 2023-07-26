@@ -16,11 +16,11 @@ export const setupStore = () => {
 };
 
 // ====================DOSI================
-const store = configureStore({
-  reducer: {
-    course: courseReducer,
-  },
-});
+// const store = configureStore({
+//   reducer: {
+//     course: courseReducer,
+//   },
+// });
 // ====================DOSI===============
 
 export type RootState = ReturnType<typeof rootReducers>;
