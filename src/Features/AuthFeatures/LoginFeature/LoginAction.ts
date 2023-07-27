@@ -9,11 +9,21 @@ export const loginAction =
   async (dispatch: AppDispatch) => {
     try {
       dispatch(loginFeatureSlice.actions.setLoading());
-      const user = new FormData();
-      user.append("email", email);
-      user.append("password", password);
+      // const user = new FormData();
+      // user.append("email", email);
+      // user.append("password", password);
 
-      const response = await axios.post<ITokens>(`${baseAPI}`, user);
+      const user = {
+        email,
+        password,
+      };
+
+      const response = await axios.post<ITokens>(
+        `${baseAPI}/auth`,
+        user
+      );
+
+      localStorage.setItem("user", JSON.stringify(response.data));
 
       dispatch(loginFeatureSlice.actions.setData(response.data));
     } catch (error: any) {

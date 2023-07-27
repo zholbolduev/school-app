@@ -3,11 +3,16 @@ import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
 import freeCourseReducer from "../Widgets/FreeCourse/FreeCourseList/FreeCourseSlice";
 import courseReducer from "../Pages/Courses/PaidCoursePage/PaidCourseSlice/PaidCourseSlice";
+import loginReducer from "../Features/AuthFeatures/LoginFeature/LoginFeatureSlice";
+import registerReducer from "../Features/AuthFeatures/RegisterFeature/RegisterFeatureSlice";
 
 const rootReducers = combineReducers({
   [contactListApi.reducerPath]: contactListApi.reducer,
   newCourseReducer,
   freeCourseReducer,
+  course: courseReducer,
+  loginReducer,
+  registerReducer,
 });
 
 export const setupStore = () => {
@@ -17,14 +22,6 @@ export const setupStore = () => {
       getDefaultMiddleware().concat(contactListApi.middleware),
   });
 };
-
-// ====================DOSI================
-const store = configureStore({
-  reducer: {
-    course: courseReducer,
-  },
-});
-// ====================DOSI===============
 
 export type RootState = ReturnType<typeof rootReducers>;
 export type AppStore = ReturnType<typeof setupStore>;

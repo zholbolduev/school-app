@@ -31,13 +31,22 @@ const AppRouter = () => {
         <Route path="request-list" element={<AdminRequestList />} />
       </Route>
       <Route path="/profile-page" element={<ProfilePage />} />
-      <Route path="/courses-timetable" element={<CoursesTimetablePage />} />
+      <Route
+        path="/courses-timetable"
+        element={<CoursesTimetablePage />}
+      />
       <Route path="/course-free" element={<FreeCoursePage />} />
       <Route path="/course-paid" element={<PaidCoursePage />} />
-      <Route path="/course-video-page" element={<CourseVideoPage />} />
+      <Route
+        path="/course-video-page/:id"
+        element={<CourseVideoPage />}
+      />
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/login-page" element={<LoginPage />} />
-      <Route path="/forgot-password-page" element={<ForgotPasswordPage />} />
+      <Route
+        path="/forgot-password-page"
+        element={<ForgotPasswordPage />}
+      />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "./AddCourse.scss";
+import { useAppDispatch } from "../../Shared/hooks/reduxHooks";
+import { postCourse } from "./PostCourse";
 
 const AddCourse = () => {
+  const dispatch = useAppDispatch();
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
-  const [type, setType] = useState<string>("");
-  const [text, setText] = useState<string>("");
-  const [video, setVideo] = useState<string>("");
+  const [type, setType] = useState<number>(11);
+  const [duration, setDuration] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(0);
 
   return (
     <div className="addCourse">
@@ -25,24 +28,33 @@ const AddCourse = () => {
           type="text"
           placeholder="description"
         />
-        <select>
-          <option value="free">free</option>
-          <option value="paid">paid</option>
-        </select>
+        <div>
+          <button onClick={() => setType(0)}>free</button>
+          <button onClick={() => setType(1)}>paid</button>
+        </div>
         <input
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setText(e.target.value)
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setDuration(Number(e.target.value))
           }
           type="text"
-          placeholder="text-lection"
+          placeholder="duration"
         />
         <input
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setVideo(e.target.value)
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setQuantity(Number(e.target.value))
           }
           type="text"
-          placeholder="video"
+          placeholder="quantity"
         />
+        <button
+          onClick={() =>
+            dispatch(
+              postCourse(name, description, type, duration, quantity)
+            )
+          }
+        >
+          Создать
+        </button>
       </div>
     </div>
   );
