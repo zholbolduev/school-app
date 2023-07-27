@@ -1,69 +1,46 @@
-import {
-  IFreeCourseState,
-  IFreeCourse,
-} from "../../../Entities/Courses/Cards/FreeCards/FreeCourse.types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
+import { AppThunk } from "../../../App/rootStore";
+import { baseAPI } from "../../../Shared/baseAPI";
 
-const initialState: IFreeCourseState = {
-  courses: [],
-  loading: false,
-  error: "",
-};
+interface CourseData {
+  name: string;
+  description: string;
+  duration: string;
+  videos: number;
+  start: string;
+  price: number;
+}
 
-const freeCoursesSlice = createSlice({
-  name: "freeCourses",
+const initialState: CourseData | null = null;
+
+const courseSlice = createSlice({
+  name: "course",
   initialState,
   reducers: {
-    freeCoursesPending: (state) => {
-      state.loading = true;
+    setCourse: (state, action: PayloadAction<CourseData>) => {
+      return action.payload;
     },
-
-    freeCoursesFulfilled: (state, action: PayloadAction<IFreeCourse[]>) => {
-      state.courses = action.payload;
-      state.loading = false;
-      state.error = "";
-    },
-
-    freeCoursesRejected: (state, action: PayloadAction<string>) => {
-      state.loading = false;
-      state.error = action.payload;
+    clearCourse: (state) => {
+      return null;
     },
   },
 });
 
-export const {
-  freeCoursesPending: getFreeCoursesPending,
-  freeCoursesFulfilled: getFreeCoursesFulfilled,
-  freeCoursesRejected: getFreeCoursesRejected,
-} = freeCoursesSlice.actions;
-export default freeCoursesSlice.reducer;
+export const { setCourse, clearCourse } = courseSlice.actions;
 
-// --------------------------
+export default courseSlice.reducer;
 
-// import { createSlice } from "@reduxjs/toolkit";
-
-// export interface IFreeCourse {
-//   title: string;
-//   duration: string;
-//   videos: number;
-//   isFavorite: boolean;
-//   to: string;
-// }
-
-// const initialState: IFreeCourse[] = [
-//   {
-//     title: "Физика",
-//     duration: "1 месяц",
-//     videos: 8,
-//     isFavorite: false,
-//     to: "/physics",
-//   },
-// ];
-
-// export const freeCourseSlice = createSlice({
-//   name: "freeCourseSlice",
-//   initialState: initialState,
-//   reducers: {},
-// });
-
-// export default freeCourseSlice.reducer;
+export const fetchCourse =
+  (courseId: number): AppThunk =>
+  async (dispatch) => {
+    try {
+      const response = await axios.get<CourseData>(
+        `${baseAPI}/admin/course/get/all`
+      );
+      console.log(response.data);
+      dispatch(setCourse(response.data));
+    } catch (error) {
+      console.error("Ошибка при получении данных о курсе:", error);
+    }
+  };

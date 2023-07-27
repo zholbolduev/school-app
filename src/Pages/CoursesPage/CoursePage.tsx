@@ -1,12 +1,11 @@
-import { FreeCourseWidget } from "../../../Widgets/FreeCourse/CoursesWidget";
-import "./FreeCoursePage.scss";
+import { CoursesWidget } from "../../Widgets/CoursesWidgets/CoursesWidget";
 
-const FreeCoursePage = () => {
+const CoursePage = () => {
   return (
     <div className="freeCoursePage">
-      <FreeCourseWidget />
+      <CoursesWidget />
     </div>
   );
 };
 
-export default FreeCoursePage;
+export default CoursePage;

@@ -1,10 +1,18 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  ThunkAction,
+  Action,
+} from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
+import courseReducer from "../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
 
 const rootReducers = combineReducers({
-  newCourseReducer,
   [contactListApi.reducerPath]: contactListApi.reducer,
+  newCourseReducer,
+  /*freeCourseReducer*/
+  course: courseReducer,
 });
 
 export const setupStore = () => {
@@ -15,14 +23,12 @@ export const setupStore = () => {
   });
 };
 
-// ====================DOSI================
-// const store = configureStore({
-//   reducer: {
-//     course: courseReducer,
-//   },
-// });
-// ====================DOSI===============
-
 export type RootState = ReturnType<typeof rootReducers>;
 export type AppStore = ReturnType<typeof setupStore>;
 export type AppDispatch = AppStore["dispatch"];
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
