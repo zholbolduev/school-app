@@ -15,12 +15,15 @@ import AdminRequestList from "../Widgets/AdminWidgets/AdminRequestList/AdminRequ
 import CoursePage from "../Pages/CoursesPage/CoursePage";
 import FreeCourseCard from "../Entities/Courses/Cards/FreeCards/FreeCourseCard";
 import { FreeDetailsWidget } from "../Widgets/FreeCourseDetails/FreeDetailsWidget";
+import Navbar from "../Widgets/Navbar/Navbar";
 
 const AppRouter = () => {
   const courseId = 1;
 
   return (
     <Routes>
+      <Route path="/navbar" element={<Navbar />} />
+
       <Route path="/" element={<LandingPage />} />
       <Route path="/admin-page/*" element={<AdminPage />}>
         <Route index element={<Navigate to="create-course" />} />

@@ -1,6 +1,6 @@
-import { FreeCourseCard } from "../../Entities/Courses/Cards/FreeCards/FreeCourseCard";
 // import { SearchForm } from "../../Entities/Courses/Search/SearchForm";
 import "./CoursesWidget.scss";
+import FreeCoursesListWg from "./FreeCoursesListWg/FreeCoursesListWg";
 
 export const CoursesWidget = () => {
   return (
@@ -204,7 +204,7 @@ export const CoursesWidget = () => {
               />
             </div>
           </div>
-          <FreeCourseCard />
+          <FreeCoursesListWg />
         </header>
       </div>
     </div>

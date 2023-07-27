@@ -31,6 +31,8 @@ export const { setCourse, clearCourse } = courseSlice.actions;
 
 export default courseSlice.reducer;
 
+// -------------------REQUEST-----------------------
+
 export const fetchCourse =
   (courseId: number): AppThunk =>
   async (dispatch) => {
