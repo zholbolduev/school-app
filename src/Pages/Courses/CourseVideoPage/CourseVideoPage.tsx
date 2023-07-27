@@ -1,9 +1,16 @@
-import { FreeDetailsWidget } from "../../../Widgets/FreeCourseDetails/FreeDetailsWidget";
+import { useParams } from "react-router";
+import { FreeDetailsWidget } from "../../../Widgets/DetailsWidgets/FreeDetailsWidget";
 import "./CourseVideoPage.scss";
 
 const CourseVideoPage = () => {
+
+  const { id } = useParams();
+
+  console.log(id);
   return (
-    <FreeDetailsWidget />
+    <div className="course-details-page">
+      <FreeDetailsWidget />
+    </div>
   );
 };
 

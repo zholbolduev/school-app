@@ -1,0 +1,13 @@
+.detailsVidAndPlaylistContainer {
+    display: flex;
+
+    .detailsPlaylist {
+        display: flex;
+        flex-direction: column;
+
+        .detailsPlaylistButtons {
+            display: flex;
+            
+        }
+    }
+}

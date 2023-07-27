@@ -1,7 +1,7 @@
 export const VideoPlaylist = () => {
     return (
         <div>
-            Video Playlist
+            <h1>Другие видео курса</h1>
         </div>
     )
 }

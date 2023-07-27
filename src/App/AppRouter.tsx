@@ -34,7 +34,7 @@ const AppRouter = () => {
       <Route path="/courses-timetable" element={<CoursesTimetablePage />} />
       <Route path="/course-free" element={<FreeCoursePage />} />
       <Route path="/course-paid" element={<PaidCoursePage />} />
-      <Route path="/course-video-page" element={<CourseVideoPage />} />
+      <Route path="/free-course-details/:id" element={<CourseVideoPage />} ></Route>
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/login-page" element={<LoginPage />} />
       <Route path="/forgot-password-page" element={<ForgotPasswordPage />} />

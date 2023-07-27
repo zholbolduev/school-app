@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
 import courseReducer from "../Pages/Courses/PaidCoursePage/PaidCourseSlice/PaidCourseSlice";
+import detailedCourseReducer from "../Widgets/DetailsWidgets/DetailedCourseSlice";
 
 const rootReducers = combineReducers({
   [contactListApi.reducerPath]: contactListApi.reducer,
   newCourseReducer,
+  detailedCourseReducer,
 });
 
 export const setupStore = () => {
