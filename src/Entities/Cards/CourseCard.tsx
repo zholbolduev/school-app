@@ -3,14 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchCourse,
   clearCourse,
-} from "../../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
+} from "../../Widgets/CoursesWidgets/PaidCoursesLIstWg";
 import { RootState } from "../../App/rootStore";
 import { Link } from "react-router-dom";
 import "./CourseCard.scss";
 
-export const FreeCourseCard: React.FC<{ courseId: number }> = ({
-  courseId,
-}) => {
+export const CourseCard: React.FC<{ courseId: number }> = ({ courseId }) => {
   const course = useSelector((state: RootState) => state.course);
   const dispatch = useDispatch();
 
@@ -54,4 +52,4 @@ export const FreeCourseCard: React.FC<{ courseId: number }> = ({
   );
 };
 
-export default FreeCourseCard;
+export default CourseCard;

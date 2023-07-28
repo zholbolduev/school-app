@@ -1,12 +1,7 @@
 import React from "react";
-import FreeCourseCard from "../../../Entities/Cards/CourseCard";
 
 const FreeCoursesListWg: React.FC = () => {
-  return (
-    <div>
-      <FreeCourseCard />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default FreeCoursesListWg;
