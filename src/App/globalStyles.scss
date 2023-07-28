@@ -10,11 +10,7 @@
 .app__layout {
   display: grid;
   grid-template-columns: 100%;
-  &_wrapper {
-    display: grid;
-    grid-template-columns: 27.5% 72.5%;
-  }
   &_content {
-    padding: 165px 55px 70px 55px;
+    padding: 165px 55px 70px 450px;
   }
 }
