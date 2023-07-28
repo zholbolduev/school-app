@@ -28,18 +28,25 @@ export const FreeDetailsWidget = () => {
             <div className="detailsVidAndPlaylistContainer" >
                 <Video />
                 <div className="detailsPlaylist">
+                    <h3>Другие видео курса</h3>
                     <VideoPlaylist />
                 </div>
             </div>
             <div className="descripAndRecoms">
-                <div>
+                <div className="detailsText">
                     <Description description={courseData?.description} />
-                    <Link className="details-link" to={'#'}>читать текстовцю лекцию</Link>
+                    <hr />
+                    <div className="details-buttons">
+                        <Link className="details-link" to={'/text-lecture'}>Текстовая лекция</Link>
+                        <TestButton />
+                    </div>
+                    <Comments />
                 </div>
-                <RecomendedVideos />
+                <div className="recomendedVideos">
+                    <h3>Рекомендации</h3>
+                    <RecomendedVideos />
+                </div>
             </div>
-            <TestButton />
-            <Comments />
         </div>
     );
 }

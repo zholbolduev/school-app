@@ -1,7 +1,9 @@
 .commentSection {
+
+    width: 45vw;
     
     .commentInput {
-        width: 50vw;
+        width: 80%;
         padding: 10px 18px;
         border: 1px solid #E0E5ED;
         border-top-left-radius: 10px;
@@ -16,6 +18,7 @@
     }
 
     .commentButton {
+        width: 20%;
         padding: 10px 18px;
         border: 1px solid #2B59C3;
         border-top-right-radius: 10px;
@@ -28,5 +31,13 @@
         cursor: pointer;
         background-color: #2B59C3;
         color: #fff;
+    }
+}
+
+.commentsContainer {
+    padding-top: 20px;
+
+    h2 {
+        padding-bottom: 10px;
     }
 }

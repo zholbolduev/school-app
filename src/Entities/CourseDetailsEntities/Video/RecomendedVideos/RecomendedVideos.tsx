@@ -1,10 +1,9 @@
 import { VideoItem } from "../VideoItem";
 
-const array = [1, 2];
+const array = [1, 2, 3, 4, 5];
 export const RecomendedVideos = () => {
     return (
-        <div>
-            <h3>Рекомендованные видео</h3>
+        <div className="videoRecomendation">
             {
                 array.map(item => <VideoItem />)
             }

@@ -4,13 +4,50 @@
     .detailsPlaylist {
         display: flex;
         flex-direction: column;
+
+        h3 {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
     }
 }
 
 .descripAndRecoms {
     display: flex;
 
-    .details-link {
-        display: inline;
+    .detailsText {
+        width: 45vw;
+
+        hr {
+            margin-top: 20px;
+        }
     }
+
+    .details-link {
+        text-decoration: none;
+        color: #2B59C3;
+        padding: 8px 32px;
+        border: 1px solid #2B59C3;
+        border-radius: 10px;
+    }
+
+    .details-link:hover {
+        color: #fff;
+        background-color: #2B59C3;
+    }
+
+    .recomendedVideos {
+        h3 {
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.details-buttons {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

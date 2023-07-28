@@ -1,9 +1,62 @@
 .mainVideo {
-    width: min(60vw, 768px);
-    height: min(34vw, 432px);
+    width: 45vw;
+    height: 25.3vw;
+    border: none;
+    border-radius: 10px;
+}
+
+.videoPlaylist {
+    margin-left: 20px;
+    width: 220px;
+    height: calc(25.3vw - 36px);
+    overflow-y: scroll;
+    scrollbar-width: 8px;
+    scrollbar-color: #2B59C3 #f0f0f0;
+}
+
+.videoPlaylist::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoPlaylist::-webkit-scrollbar-thumb {
+    background-color: #2B59C3; /* цвет активной области */
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoPlaylist::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* цвет фоновой области */
+}
+
+
+
+.videoRecomendation {
+    margin-left: 20px;
+    width: 220px;
+    height: calc(25.3vw - 26px);
+    overflow-y: scroll;
+}
+
+.videoRecomendation::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoRecomendation::-webkit-scrollbar-thumb {
+    background-color: #2B59C3; /* цвет активной области */
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoRecomendation::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* цвет фоновой области */
 }
 
 .videoCard {
+
+    margin: 10px;
+    margin-left: 0;
 
     img {
         border-radius: 10px;
@@ -11,7 +64,6 @@
 
     button {
         display: flex;
-        width: 30vw;
         border-radius: 10px;
         border: none;
         background-color: #fff;
@@ -20,4 +72,8 @@
     button:hover {
         cursor: pointer;
     }
+}
+
+.videoCard:first-child {
+    margin-top: 0;
 }

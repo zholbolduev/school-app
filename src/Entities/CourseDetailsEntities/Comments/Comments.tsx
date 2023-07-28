@@ -1,10 +1,11 @@
 import { WriteComment } from "./WriteComment";
+import './Comments.scss';
 
 
 export const Comments = () => {
     return (
-        <div>
-            <h1>Комментарии</h1>
+        <div className="commentsContainer">
+            <h2>Комментарии</h2>
             <WriteComment />
         </div>
     );
