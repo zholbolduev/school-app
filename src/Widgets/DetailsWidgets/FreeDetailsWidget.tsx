@@ -1,7 +1,5 @@
 import { Video } from "../../Entities/CourseDetailsEntities/Video/MainVideoPlayer";
 import { VideoPlaylist } from "../../Entities/CourseDetailsEntities/Video/VideoPlaylist";
-import { PlaylistButton } from "../../Shared/Buttons/PlaylistButton";
-import { RecomendedButton } from "../../Shared/Buttons/RecomendedButton";
 import { TestButton } from "../../Shared/Buttons/TestButton";
 import { useAppSelector } from "../../Shared/hooks/reduxHooks";
 import { useState, useEffect } from 'react'; 
@@ -10,11 +8,11 @@ import './DetailsWidget.scss';
 import { Description } from "../../Entities/CourseDetailsEntities/Description/Description";
 import { RecomendedVideos } from "../../Entities/CourseDetailsEntities/Video/RecomendedVideos/RecomendedVideos";
 import { Comments } from "../../Entities/CourseDetailsEntities/Comments/Comments";
+import { Link } from "react-router-dom";
 
 export const FreeDetailsWidget = () => {
 
     const [courseData, setCourseData] = useState<ICourseData | null>(null);
-    const [selectButton, setSelectButton] = useState(true);
 
     const data = useAppSelector(state => state.detailedCourseReducer.course);
 
@@ -23,11 +21,6 @@ export const FreeDetailsWidget = () => {
     }, [data]);
 
     console.log(courseData);
-
-    const handleSelectedButton = () => {
-        setSelectButton(!selectButton);
-    }
-
     
     return (
         <div className="details-widget">
@@ -35,18 +28,16 @@ export const FreeDetailsWidget = () => {
             <div className="detailsVidAndPlaylistContainer" >
                 <Video />
                 <div className="detailsPlaylist">
-                    <div className="detailsPlaylistButtons">
-                        <PlaylistButton selected={selectButton} onClick={handleSelectedButton} />
-                        <RecomendedButton selected={selectButton} onClick={handleSelectedButton} />
-                    </div>
-                    {
-                        selectButton ?
-                        <VideoPlaylist /> :
-                        <RecomendedVideos />
-                    }
+                    <VideoPlaylist />
                 </div>
             </div>
-            <Description description={courseData?.description} />
+            <div className="descripAndRecoms">
+                <div>
+                    <Description description={courseData?.description} />
+                    <Link className="details-link" to={'#'}>читать текстовцю лекцию</Link>
+                </div>
+                <RecomendedVideos />
+            </div>
             <TestButton />
             <Comments />
         </div>

@@ -4,10 +4,13 @@
     .detailsPlaylist {
         display: flex;
         flex-direction: column;
+    }
+}
 
-        .detailsPlaylistButtons {
-            display: flex;
-            
-        }
+.descripAndRecoms {
+    display: flex;
+
+    .details-link {
+        display: inline;
     }
 }

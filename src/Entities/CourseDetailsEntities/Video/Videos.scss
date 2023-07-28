@@ -2,3 +2,22 @@
     width: min(60vw, 768px);
     height: min(34vw, 432px);
 }
+
+.videoCard {
+
+    img {
+        border-radius: 10px;
+    }
+
+    button {
+        display: flex;
+        width: 30vw;
+        border-radius: 10px;
+        border: none;
+        background-color: #fff;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+}
