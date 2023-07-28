@@ -6,19 +6,12 @@ import {
 } from "@reduxjs/toolkit";
 import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
-import detailedCourseReducer from "../Widgets/DetailsWidgets/DetailedCourseSlice";
-import courseReducer from "../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
-import freeCourseReducer from "../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
 import loginReducer from "../Features/AuthFeatures/LoginFeature/LoginFeatureSlice";
 import registerReducer from "../Features/AuthFeatures/RegisterFeature/RegisterFeatureSlice";
 
 const rootReducers = combineReducers({
   [contactListApi.reducerPath]: contactListApi.reducer,
   newCourseReducer,
-  detailedCourseReducer,
-  /*freeCourseReducer*/
-  course: courseReducer,
-  freeCourseReducer,
   loginReducer,
   registerReducer,
 });
