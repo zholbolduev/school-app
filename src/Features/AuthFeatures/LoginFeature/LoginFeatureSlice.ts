@@ -26,3 +26,5 @@ export const loginFeatureSlice = createSlice({
     },
   },
 });
+
+export default loginFeatureSlice.reducer;

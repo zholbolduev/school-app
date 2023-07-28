@@ -1,21 +1,8 @@
-import React from "react";
-
-const Navbar: React.FC = () => {
+import "./Navbar.scss";
+const Navbar = () => {
   return (
-    <div>
-      <nav>
-        <div>
-          <div>
-            <img
-              className="logoNav"
-              src="/src/Widgets/Navbar/NavbarPhoto/Combined Shape.png"
-              alt="Makers"
-            />
-          </div>
-          <div></div>
-        </div>
-        <div></div>
-      </nav>
+    <div className="navbar">
+      <button>Выйти</button>
     </div>
   );
 };

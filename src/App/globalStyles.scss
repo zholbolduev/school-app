@@ -1,8 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
+}
+
+.app__layout {
+  display: grid;
+  grid-template-columns: 100%;
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 27.5% 72.5%;
+  }
+  &_content {
+    padding: 165px 55px 70px 55px;
+  }
 }

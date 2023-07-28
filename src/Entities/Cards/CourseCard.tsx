@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchCourse,
   clearCourse,
-} from "../../../../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
-import { RootState } from "../../../../App/rootStore";
+} from "../../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCourseSliceWg";
+import { RootState } from "../../App/rootStore";
 import { Link } from "react-router-dom";
-import "./FreeCourseCard.scss";
+import "./CourseCard.scss";
 
 export const FreeCourseCard: React.FC<{ courseId: number }> = ({
   courseId,

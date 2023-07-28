@@ -1,5 +1,5 @@
 import React from "react";
-import FreeCourseCard from "../../../Entities/Courses/Cards/FreeCards/FreeCourseCard";
+import FreeCourseCard from "../../../Entities/Cards/CourseCard";
 
 const FreeCoursesListWg: React.FC = () => {
   return (

@@ -17,7 +17,7 @@ const RequestList = () => {
 
   const getPaidCourses = async () => {
     const response = await axios.get(
-      `${baseAPI}/paidcourses/enrolls`
+      `${baseAPI}/paidcourses`
     );
   };
 

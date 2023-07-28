@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IFreeCourse } from "../Cards/FreeCards/FreeCourse.types";
+import { IFreeCourse } from "../../Cards/FreeCourse.types";
 import axios from "axios";
 
 export const searchFreeCourses = createAsyncThunk(
