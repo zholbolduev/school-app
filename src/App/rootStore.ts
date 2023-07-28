@@ -8,12 +8,14 @@ import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
 import loginReducer from "../Features/AuthFeatures/LoginFeature/LoginFeatureSlice";
 import registerReducer from "../Features/AuthFeatures/RegisterFeature/RegisterFeatureSlice";
+import detailedCourseReducer  from "../Widgets/DetailsWidgets/DetailedCourseSlice";
 
 const rootReducers = combineReducers({
   [contactListApi.reducerPath]: contactListApi.reducer,
   newCourseReducer,
   loginReducer,
   registerReducer,
+  detailedCourseReducer,
 });
 
 export const setupStore = () => {

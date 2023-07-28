@@ -10,7 +10,7 @@ export const TestButton = () => {
 
     return (
         <div className="testButton">
-            <button onClick={handleClick}><Link to={'#'}>Пройти тест</Link></button>
+            <button onClick={handleClick}><Link to={'/test-page'}>Пройти тест</Link></button>
         </div>
     )
 }

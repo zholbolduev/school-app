@@ -8,7 +8,7 @@ const CourseCard: FC<IProps> = ({ card }: IProps) => {
     <div className="card">
       <div className="blockCard">
         <img className="photoCard" src={card.img} alt="image" />
-        <Link to={`/courses-free-det`}>
+        <Link to={`/course-free-details`}>
           <button className="btnCard">{card.title}</button>
         </Link>
         <div className="heart-icon" id="heartIcon"></div>
