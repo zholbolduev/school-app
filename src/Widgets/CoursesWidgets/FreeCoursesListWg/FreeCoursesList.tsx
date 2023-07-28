@@ -9,7 +9,7 @@ const FreeCoursesList: React.FC = () => {
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "300",
+      // price: "30",
       type: "paid",
     },
     {
@@ -17,7 +17,7 @@ const FreeCoursesList: React.FC = () => {
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "300",
+      // price: "30",
       type: "paid",
     },
     {
@@ -25,7 +25,7 @@ const FreeCoursesList: React.FC = () => {
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "300",
+      // price: "900",
       type: "paid",
     },
   ];

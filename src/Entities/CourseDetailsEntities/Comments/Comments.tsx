@@ -1,7 +1,7 @@
 import { CommentForm } from "./CommentForm";
 import './Comments.scss';
 import { FC, useState, useEffect } from "react";
-import { getComments } from "../../../Widgets/CommentWidgets/CommentsApi";
+import { createComment, getComments } from "../../../Widgets/CommentWidgets/CommentsApi";
 import { IComments } from "../../../Widgets/CommentWidgets/types";
 import { Comment } from "./Comment";
 
@@ -27,6 +27,13 @@ export const Comments: FC<IUser> = ({currentUserId}) => {
         );
     }
 
+    const addComment = (text: string, parentId: null) => {
+        createComment(text, parentId)
+        .then(comment => {
+            setCommentsArray([comment, ...commentsArray]);
+        })
+    }
+
     useEffect(() => {
         getComments()
         .then(data => {
@@ -40,7 +47,7 @@ export const Comments: FC<IUser> = ({currentUserId}) => {
     return (
         <div className="comments">
             <h2>Комментарии</h2>
-            <CommentForm />
+            <CommentForm handleSubmit={addComment} />
             <div className="commentsContainer">
                 {
                     rootComments.map(rootComment => (

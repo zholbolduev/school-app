@@ -51,15 +51,9 @@ const AppRouter = () => {
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/login-page" element={<LoginPage />} />
 
-      <Route
-        path="/forgot-password-page"
-        element={<ForgotPasswordPage />}
-      />
+      <Route path="/forgot-password-page" element={<ForgotPasswordPage />} />
       <Route path="*" element={<NotFoundPage />} />
-      <Route
-        path="/forgot-password-page"
-        element={<ForgotPasswordPage />}
-      />
+      <Route path="/forgot-password-page" element={<ForgotPasswordPage />} />
     </Routes>
   );
 };

@@ -23,23 +23,25 @@ export const FreeDetailsWidget = () => {
     console.log(courseData);
     
     return (
-        <div className="details-widget">
-            <h1>{courseData !== null && courseData.name}</h1>
-            <div className="detailsVidAndPlaylistContainer" >
+        <div className="details-container">
+            <div className="details-top">
+                <h1>{courseData !== null && courseData.name}</h1>
+            </div>
+            <div className="details-center-container" >
                 <Video />
-                <div className="detailsPlaylist">
+                <div className="details-playlist">
                     <h3>Другие видео курса</h3>
                     <VideoPlaylist />
                 </div>
             </div>
-            <div className="descripAndRecoms">
-                <div className="detailsText">
+            <div className="details-bottom-container">
+                <div className="details-description">
                     <Description description={courseData?.description} />
-                    <hr />
                     <div className="details-buttons">
                         <Link className="details-link" to={'/text-lecture'}>Текстовая лекция</Link>
                         <TestButton />
                     </div>
+                    <hr />
                     <Comments currentUserId="1" />
                 </div>
                 <div className="recomendedVideos">

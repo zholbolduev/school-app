@@ -4,35 +4,35 @@ export const getComments = async (): Promise<IComments[]> => {
     return [
       {
         id: "1",
-        body: "First comment",
-        username: "Jack",
+        body: "Захватывающий курс для начинающих программистов! Изучите основы разработки вместе с нами.",
+        username: "Edil",
         userId: "1",
         parentId: null,
-        createdAt: "2021-08-16T23:00:33.010+02:00",
+        createdAt: "2023-07-16T23:00:33.010+02:00",
       },
       {
         id: "2",
-        body: "Second comment",
-        username: "John",
+        body: "Курс был очень интересным и познавательным! Я научился многому новому и уже применяю полученные знания в своих проектах.",
+        username: "Unknown",
         userId: "2",
         parentId: null,
-        createdAt: "2021-08-16T23:00:33.010+02:00",
+        createdAt: "2023-07-16T23:00:33.010+02:00",
       },
       {
         id: "3",
-        body: "First comment first child",
-        username: "John",
+        body: "Большое спасибо за ваш отзыв! Мы рады, что вам понравился курс, и надеемся, что он помог вам освоить новые навыки разработки.",
+        username: "Makers",
         userId: "2",
         parentId: "1",
-        createdAt: "2021-08-16T23:00:33.010+02:00",
+        createdAt: "2023-07-16T23:00:33.010+02:00",
       },
       {
         id: "4",
-        body: "Second comment second child",
-        username: "John",
+        body: "Мы рады, что вам понравился курс и что вы уже можете применять полученные знания на практике. Желаем вам успехов в дальнейшем обучении и разработке!",
+        username: "Makers",
         userId: "2",
         parentId: "2",
-        createdAt: "2021-08-16T23:00:33.010+02:00",
+        createdAt: "2023-07-16T23:00:33.010+02:00",
       },
     ];
   };
@@ -43,7 +43,7 @@ export const getComments = async (): Promise<IComments[]> => {
       body: text,
       parentId,
       userId: "1",
-      username: "John",
+      username: "Edil",
       createdAt: new Date().toISOString(),
     };
   };
