@@ -1,7 +1,12 @@
+import ProfileWidgets from "../../Widgets/ProfileWidgets/ProfileWidgets";
 import "./ProfilePage.scss";
 
 const ProfilePage = () => {
-  return <div>ProfilePage</div>;
+  return (
+    <div>
+      <ProfileWidgets />
+    </div>
+  );
 };
 
 export default ProfilePage;
