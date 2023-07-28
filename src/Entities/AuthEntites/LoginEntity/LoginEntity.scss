@@ -1,0 +1,40 @@
+.loginEntity {
+  width: 565px;
+  height: 800px;
+  padding: 50px 90px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 75px;
+  z-index: 1;
+  &__logo{
+    width: 55%;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    h2 {
+      color: #4d4d4d;
+      font-size: 36px;
+      font-weight: 400;
+    }
+
+    &_remember-me {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 7px;
+      div {
+        width: 23px;
+        height: 23px;
+        background-color: #d9d9d9;
+        cursor: pointer;
+      }
+    }
+  }
+}

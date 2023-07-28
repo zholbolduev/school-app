@@ -1,0 +1,15 @@
+.registerPage {
+  height: 100vh;
+  background-color: #f3f3f7;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+  }
+}

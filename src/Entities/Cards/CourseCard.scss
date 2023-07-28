@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&family=Ubuntu:wght@300&display=swap");
+
+.card {
+  width: 295px;
+  height: 371px;
+  flex-shrink: 0;
+
+  border-radius: 8px;
+  border: 1px solid #e0e5ed;
+  background: var(--other-white, #fff);
+  margin-left: 20px;
+}
+
+.photoCard {
+  width: 262.891px;
+  height: 208px;
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  border: 1px solid #e0e5ed;
+  background: var(--text-in-field, #ccc);
+  margin-left: 15px;
+  margin: 16px 16px 0px 16px;
+}
+
+.heart-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/src/Entities/Courses/Cards/photoCard/Heart.png"); /* Используйте путь к иконке сердечка */
+  background-size: cover;
+  cursor: pointer;
+  margin: 12px 12px;
+}
+
+.descCard {
+  width: 262.891px;
+
+  color: #1b1c1f;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  text-transform: capitalize;
+  margin: 20px 16px 0px 16px;
+}
+
+.blockCard {
+  position: relative;
+}
+
+.btnCard {
+  display: flex;
+  width: 134px;
+  height: 32px;
+  padding: 5px 0px 0px 60px;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #fff;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: 80px;
+
+  border-radius: 8px;
+  border: 1px solid #e0e5ed;
+  background: #2b59c3;
+  cursor: pointer;
+}
+
+.priceCard {
+  display: flex;
+  justify-content: end;
+  margin: 26px 23px;
+}

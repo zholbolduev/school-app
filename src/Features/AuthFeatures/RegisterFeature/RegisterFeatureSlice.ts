@@ -22,7 +22,10 @@ export const registerFeatureSlice = createSlice({
     },
     setError(state, action: PayloadAction<string>) {
       state.loading = false;
+      console.log(action.payload);
       state.error = action.payload;
     },
   },
 });
+
+export default registerFeatureSlice.reducer;
