@@ -1,0 +1,37 @@
+.nameUser {
+  color: #2b59c3;
+
+  /* Heading/Medium/H5 - 24px */
+  font-family: Rubik;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+}
+
+.typeUser {
+  color: var(--text-body, #808080);
+
+  /* Heading/Medium/H5 - 24px */
+  font-family: Rubik;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px; /* 133.333% */
+}
+
+.blockUser {
+  display: flex;
+}
+
+.blockInfoUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 26px;
+}
+
+.blockInfoUser span {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
