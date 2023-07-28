@@ -12,7 +12,6 @@ import RequestList from "../Widgets/AdminWidgets/RequestList/RequestList";
 import AdminContactList from "../Widgets/AdminWidgets/AdminConctactList/AdminContactList";
 import AdminRequestList from "../Widgets/AdminWidgets/AdminRequestList/AdminRequestList";
 import FreeCourseCard from "../Entities/Cards/CourseCard";
-import { FreeDetailsWidget } from "../Widgets/FreeCourseDetails/FreeDetailsWidget";
 import HomePage from "../Pages/HomePage/HomePage";
 import AppLayout from "./AppLayout";
 import PaidCoursePage from "../Pages/PaidCoursePage/PaidCoursePage";
@@ -42,7 +41,6 @@ const AppRouter = () => {
       </Route>
 
       <Route path="/register-page" element={<RegisterPage />} />
-      <Route path="/courses-free-det" element={<FreeDetailsWidget />} />
       <Route path="/login-page" element={<LoginPage />} />
 
       <Route path="/courrr" element={<FreeCourseCard courseId={courseId} />} />

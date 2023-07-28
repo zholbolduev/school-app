@@ -19,7 +19,6 @@ const rootReducers = combineReducers({
   /*freeCourseReducer*/
   course: courseReducer,
   freeCourseReducer,
-  course: courseReducer,
   loginReducer,
   registerReducer,
 });
