@@ -24,12 +24,12 @@ const Dashboard = () => {
       setPaid("");
       setAboutUs("");
       setMain("active");
-    } else if (pathname === "/courses") {
+    } else if (pathname === "/course-free") {
       setPaid("");
       setAboutUs("");
       setMain("");
       setCourses("active");
-    } else if (pathname === "/paid") {
+    } else if (pathname === "/course-paid") {
       setCourses("");
       setAboutUs("");
       setMain("");
@@ -47,7 +47,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard__wrapper">
-        <img className="dashboard__wrapper_logo" src={logo} alt="logo" />
+        <img
+          className="dashboard__wrapper_logo"
+          src={logo}
+          alt="logo"
+        />
         <div className="dashboard__wrapper_search">
           <input
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -55,7 +59,9 @@ const Dashboard = () => {
             }
             type="text"
           />
-          <div>{search ? null : <img src={magnifer} alt="magnifer" />}</div>
+          <div>
+            {search ? null : <img src={magnifer} alt="magnifer" />}
+          </div>
         </div>
 
         <div className="dashboard__wrapper_pages">
@@ -63,15 +69,24 @@ const Dashboard = () => {
             <img src={home} alt="home" />
             <p>Главная</p>
           </div>
-          <div onClick={() => navigate("/courses")} className={courses}>
+          <div
+            onClick={() => navigate("/course-free")}
+            className={courses}
+          >
             <img src={blocks} alt="blocks" />
             <p>Курсы</p>
           </div>
-          <div onClick={() => navigate("/course-paid")} className={paid}>
+          <div
+            onClick={() => navigate("/course-paid")}
+            className={paid}
+          >
             <img src={cart} alt="cart" />
             <p>Платные курсы</p>
           </div>
-          <div onClick={() => navigate("/about-us")} className={aboutUs}>
+          <div
+            onClick={() => navigate("/about-us")}
+            className={aboutUs}
+          >
             <img src={info} alt="info" />
             <p>О нас</p>
           </div>

@@ -1,15 +1,15 @@
 import React from "react";
 import CourseCard from "../../../Entities/Cards/CourseCard";
-import "./PaidCourseListWg.scss";
+import "./FreeCourseList.scss";
 
-const PaidCoursesListWg: React.FC = () => {
+const FreeCoursesList: React.FC = () => {
   const cards = [
     {
       id: 1,
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "980",
+      // price: "30",
       type: "paid",
     },
     {
@@ -17,7 +17,7 @@ const PaidCoursesListWg: React.FC = () => {
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "310",
+      // price: "30",
       type: "paid",
     },
     {
@@ -25,14 +25,13 @@ const PaidCoursesListWg: React.FC = () => {
       title: "JS",
       description: "Interpersonal skills - work better with others!",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "390",
+      // price: "900",
       type: "paid",
     },
   ];
-
   return (
-    <div className="PaidCourseList">
-      <h2>Платные курсы</h2>
+    <div className="freeCourseList">
+      <h2>Бесплатные курсы</h2>
       <div className="freeCourseList__wrapper">
         {cards.map((card) => (
           <CourseCard key={card.id} card={card} />
@@ -42,4 +41,4 @@ const PaidCoursesListWg: React.FC = () => {
   );
 };
 
-export default PaidCoursesListWg;
+export default FreeCoursesList;

@@ -15,6 +15,7 @@ import { FreeDetailsWidget } from "../Widgets/FreeCourseDetails/FreeDetailsWidge
 import HomePage from "../Pages/HomePage/HomePage";
 import AppLayout from "./AppLayout";
 import PaidCoursePage from "../Pages/PaidCoursePage/PaidCoursePage";
+import FreeCoursePage from "../Pages/FreeCoursePage/FreeCoursePage";
 
 const AppRouter = () => {
   return (
@@ -32,7 +33,7 @@ const AppRouter = () => {
           <Route path="request-list" element={<AdminRequestList />} />
         </Route>
         <Route path="/profile-page" element={<ProfilePage />} />
-        {/* <Route path="/course-free" element={<FreeCoursePage />} /> */}
+        <Route path="/course-free" element={<FreeCoursePage />} />
         <Route path="/course-paid" element={<PaidCoursePage />} />
         {/* <Route path="/course-video-page/:id" element={<CourseVideoPage />} /> */}
         <Route path="*" element={<NotFoundPage />} />
