@@ -23,6 +23,8 @@ export const loginAction =
         user
       );
 
+      console.log(response.data);
+
       localStorage.setItem("user", JSON.stringify(response.data));
 
       dispatch(loginFeatureSlice.actions.setData(response.data));

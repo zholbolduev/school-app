@@ -1,6 +1,6 @@
 import LoginFeature from "../../../Features/AuthFeatures/LoginFeature/LoginFeature";
 import "./LoginEntity.scss";
-import logo from "../assets/logo.svg";
+import logo from "../../../Shared/assets/logo-black.svg";
 
 const LoginEntity = () => {
   return (

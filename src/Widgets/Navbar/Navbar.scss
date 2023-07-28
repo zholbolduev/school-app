@@ -1,0 +1,21 @@
+.navbar {
+  width: 100%;
+  padding: 28px;
+  background-color: #1b1c1f;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  z-index: -1;
+  height: 94px;
+  button {
+    border-radius: 8px;
+    background: #2b59c3;
+    padding: 8px 32px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    outline: rebeccapurple;
+  }
+}
