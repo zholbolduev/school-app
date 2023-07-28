@@ -5,7 +5,7 @@ export const RecomendedVideos = () => {
     return (
         <div className="videoRecomendation">
             {
-                array.map(item => <VideoItem />)
+                array.map(item => <VideoItem key={item} />)
             }
         </div>
     );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Comments.scss';
 
-export const WriteComment = () => {
+export const CommentForm = () => {
 
     const [comment, setComment] = useState('');
 

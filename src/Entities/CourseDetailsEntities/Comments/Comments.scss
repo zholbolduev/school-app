@@ -34,10 +34,21 @@
     }
 }
 
-.commentsContainer {
+.comments {
     padding-top: 20px;
 
     h2 {
         padding-bottom: 10px;
+    }
+}
+
+.comment {
+
+    padding-top: 10px;
+    display: flex;
+
+    .comment-icon-conatiner {
+        width: 24px;
+        height: 24px;
     }
 }

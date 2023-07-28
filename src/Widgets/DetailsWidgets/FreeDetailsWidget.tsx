@@ -40,7 +40,7 @@ export const FreeDetailsWidget = () => {
                         <Link className="details-link" to={'/text-lecture'}>Текстовая лекция</Link>
                         <TestButton />
                     </div>
-                    <Comments />
+                    <Comments currentUserId="1" />
                 </div>
                 <div className="recomendedVideos">
                     <h3>Рекомендации</h3>
