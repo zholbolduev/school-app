@@ -49,6 +49,7 @@ const AppRouter = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/register-page" element={<RegisterPage />} />
+
       <Route path="/login-page" element={<LoginPage />} />
 
       <Route
@@ -56,10 +57,6 @@ const AppRouter = () => {
         element={<ForgotPasswordPage />}
       />
       <Route path="*" element={<NotFoundPage />} />
-      <Route
-        path="/forgot-password-page"
-        element={<ForgotPasswordPage />}
-      />
     </Routes>
   );
 };

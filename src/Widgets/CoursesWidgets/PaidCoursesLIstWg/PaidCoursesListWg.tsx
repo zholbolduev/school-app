@@ -1,7 +1,45 @@
 import React from "react";
+import CourseCard from "../../../Entities/Cards/CourseCard";
+import "./PaidCourseListWg.scss";
 
 const PaidCoursesListWg: React.FC = () => {
-  return <div></div>;
+  const cards = [
+    {
+      id: 1,
+      title: "JS",
+      description: "Interpersonal skills - work better with others!",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
+      price: "980",
+      type: "paid",
+    },
+    {
+      id: 2,
+      title: "JS",
+      description: "Interpersonal skills - work better with others!",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
+      price: "310",
+      type: "paid",
+    },
+    {
+      id: 3,
+      title: "JS",
+      description: "Interpersonal skills - work better with others!",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
+      price: "390",
+      type: "paid",
+    },
+  ];
+
+  return (
+    <div className="PaidCourseList">
+      <h2>Платные курсы</h2>
+      <div className="freeCourseList__wrapper">
+        {cards.map((card) => (
+          <CourseCard key={card.id} card={card} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default PaidCoursesListWg;
