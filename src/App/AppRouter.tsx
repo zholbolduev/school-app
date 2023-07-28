@@ -16,11 +16,13 @@ import HomePage from "../Pages/HomePage/HomePage";
 import AppLayout from "./AppLayout";
 import PaidCoursePage from "../Pages/PaidCoursePage/PaidCoursePage";
 import FreeCoursePage from "../Pages/FreeCoursePage/FreeCoursePage";
+import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 
 const AppRouter = () => {
   return (
     <Routes>
       <Route element={<AppLayout />}>
+        <Route path="about-us" element={<AboutUsPage />} />
         <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/admin-page/*" element={<AdminPage />}>

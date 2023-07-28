@@ -17,11 +17,10 @@
       width: 100%;
       display: flex;
       align-items: center;
-      margin-bottom: 50px;
 
       input {
         padding: 10px 18px;
-        height: 70px;
+        height: 40px;
         width: 100%;
         border-radius: 10px;
         border: 1px solid #fff;
@@ -31,7 +30,7 @@
         font-size: 20px;
       }
       div {
-        padding: 10px 18px;
+        padding: 0px 18px;
         height: 25px;
         display: flex;
         align-items: center;
@@ -49,17 +48,17 @@
       }
       div {
         width: 100%;
-        padding: 20px;
+        padding: 10px 20px;
         display: flex;
         align-items: center;
-        gap: 60px;
+        gap: 20px;
         cursor: pointer;
         border-radius: 12px;
         transition: 0.3s;
 
         p {
           color: #fff;
-          font-size: 28px;
+          font-size: 18px;
           font-weight: 400;
         }
       }
