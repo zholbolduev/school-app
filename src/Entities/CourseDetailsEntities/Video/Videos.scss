@@ -1,0 +1,79 @@
+.mainVideo {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.videoPlaylist {
+    margin-left: 20px;
+    width: 220px;
+    height: calc(25.3vw - 36px);
+    overflow-y: scroll;
+    scrollbar-width: 8px;
+    scrollbar-color: #2B59C3 #f0f0f0;
+}
+
+.videoPlaylist::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoPlaylist::-webkit-scrollbar-thumb {
+    background-color: #2B59C3; /* цвет активной области */
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoPlaylist::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* цвет фоновой области */
+}
+
+
+
+.videoRecomendation {
+    margin-left: 20px;
+    width: 220px;
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.videoRecomendation::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoRecomendation::-webkit-scrollbar-thumb {
+    background-color: #2B59C3; /* цвет активной области */
+    width: 8px;
+    border-radius: 4px;
+}
+
+.videoRecomendation::-webkit-scrollbar-track {
+    background-color: #f0f0f0; /* цвет фоновой области */
+}
+
+.videoCard {
+
+    margin: 10px;
+    margin-left: 0;
+
+    img {
+        border-radius: 10px;
+    }
+
+    button {
+        display: flex;
+        border-radius: 10px;
+        border: none;
+        background-color: #fff;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+.videoCard:first-child {
+    margin-top: 0;
+}

@@ -29,7 +29,7 @@ const CourseCard: FC<IProps> = ({ card }: IProps) => {
             {card.title}
           </button>
         ) : (
-          <Link to={`/courses-free-det`}>
+          <Link to={`/course-free-details`}>
             <button className="btnCard">{card.title}</button>
           </Link>
         )}

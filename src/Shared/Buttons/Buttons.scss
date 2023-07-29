@@ -1,0 +1,25 @@
+.button {
+    button {
+        padding: 8px 12px;
+        border: 1px solid #929292;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+.active-button {
+    button {
+        background-color: #FF784F;
+        color: white;
+    }
+}
+
+.readButton {
+    button {
+        padding: 14px 60px;
+    }
+}

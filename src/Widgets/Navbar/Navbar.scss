@@ -7,15 +7,24 @@
   position: fixed;
   z-index: 1;
   height: 94px;
-  button {
-    border-radius: 8px;
-    background: #2b59c3;
-    padding: 8px 32px;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 400;
-    border: none;
+  img {
     cursor: pointer;
-    outline: rebeccapurple;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &_avatar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      span {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
   }
 }
