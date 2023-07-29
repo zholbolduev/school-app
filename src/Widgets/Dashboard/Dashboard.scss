@@ -46,25 +46,28 @@
         border-radius: 12px;
         background: rgba(255, 255, 255, 0.5);
       }
-      div {
-        width: 100%;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        cursor: pointer;
-        border-radius: 12px;
-        transition: 0.3s;
+      &_top,
+      &_middle,
+      &_bottom {
+        div {
+          width: 100%;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          cursor: pointer;
+          border-radius: 12px;
+          transition: 0.3s;
 
-
-        p {
-          color: #fff;
-          font-size: 16px;
-          font-weight: 400;
+          p {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 400;
+          }
         }
-      }
-      div:hover {
-        background-color: rgba(255, 255, 255, 0.5);
+        div:hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
       }
     }
   }

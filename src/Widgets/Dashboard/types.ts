@@ -3,4 +3,6 @@ export interface PageStates {
   courses: string;
   paid: string;
   aboutUs: string;
+  profile: string;
+  admin?: string;
 }

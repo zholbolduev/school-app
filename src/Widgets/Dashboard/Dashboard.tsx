@@ -3,7 +3,11 @@ import logo from "../../Shared/assets/logo-white.svg";
 import magnifer from "./assets/Magnifer.svg";
 import { ChangeEvent, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
-import { menuItems } from "./menuItems";
+import {
+  menuItemsBottom,
+  menuItemsMiddle,
+  menuItemsTop,
+} from "./menuItems";
 import { PageStates } from "./types";
 
 const Dashboard = () => {
@@ -13,6 +17,8 @@ const Dashboard = () => {
     courses: "",
     paid: "",
     aboutUs: "",
+    profile: "",
+    admin: "",
   });
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -23,6 +29,8 @@ const Dashboard = () => {
       "/course-free": "courses",
       "/course-paid": "paid",
       "/about-us": "aboutUs",
+      "profile-page": "profile",
+      "admin-page": "admin",
     };
 
     const currentPage = pagesMap[pathname] || "main";
@@ -32,6 +40,8 @@ const Dashboard = () => {
       courses: currentPage === "courses" ? "active" : "",
       paid: currentPage === "paid" ? "active" : "",
       aboutUs: currentPage === "aboutUs" ? "active" : "",
+      profile: currentPage === "profile" ? "active" : "",
+      admin: currentPage === "admin" ? "active" : "",
     });
   };
 
@@ -59,16 +69,49 @@ const Dashboard = () => {
         </div>
 
         <div className="dashboard__wrapper_pages">
-          {menuItems.map(({ path, stateKey, imgSrc, alt, label }) => (
-            <div
-              key={path}
-              onClick={() => navigate(path)}
-              className={pageStates[stateKey]}
-            >
-              <img src={imgSrc} alt={alt} />
-              <p>{label}</p>
-            </div>
-          ))}
+          <div className="dashboard__wrapper_pages_top">
+            {menuItemsTop.map(
+              ({ path, stateKey, imgSrc, alt, label }) => (
+                <div
+                  key={path}
+                  onClick={() => navigate(path)}
+                  className={pageStates[stateKey]}
+                >
+                  <img src={imgSrc} alt={alt} />
+                  <p>{label}</p>
+                </div>
+              )
+            )}
+          </div>
+
+          <div className="dashboard__wrapper_pages_middle">
+            {menuItemsMiddle.map(
+              ({ path, stateKey, imgSrc, alt, label }) => (
+                <div
+                  key={path}
+                  onClick={() => navigate(path)}
+                  className={pageStates[stateKey]}
+                >
+                  <img src={imgSrc} alt={alt} />
+                  <p>{label}</p>
+                </div>
+              )
+            )}
+          </div>
+          <div className="dashboard__wrapper_pages_bottom">
+            {menuItemsBottom.map(
+              ({ path, stateKey, imgSrc, alt, label }) => (
+                <div
+                  key={path}
+                  onClick={() => navigate(path)}
+                  className={pageStates[stateKey]}
+                >
+                  <img src={imgSrc} alt={alt} />
+                  <p>{label}</p>
+                </div>
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>

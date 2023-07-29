@@ -36,7 +36,6 @@ const AppRouter = () => {
           <Route path="contact-list" element={<AdminContactList />} />
           <Route path="request-list" element={<AdminRequestList />} />
         </Route>
-        <Route path="/profile-page" element={<ProfilePage />} />
         <Route path="/course-free" element={<FreeCoursePage />} />
         <Route path="/course-paid" element={<PaidCoursePage />} />
         <Route
