@@ -6,7 +6,7 @@ export const VideoPlaylist = () => {
         <div className="videoPlaylist">
             <div>
                 {
-                    array.map(item => <VideoItem />)
+                    array.map(item => <VideoItem key={item} />)
                 }
             </div>
         </div>

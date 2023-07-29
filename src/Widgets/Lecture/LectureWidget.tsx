@@ -7,35 +7,29 @@ const LectureWidget = () => {
     const navigate = useNavigate();
 
     const lecture = {
-        title: 'Алгебра',
-        text:  `Sed ut perspiciatis, unde omnis iste natus error sit 
-        voluptatem accusantium doloremque laudantium, totam rem 
-        aperiam eaque ipsa, quae ab illo inventore veritatis et 
-        quasi architecto beatae vitae dicta sunt, explicabo. Nemo 
-        enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit 
-        aut fugit, sed quia consequuntur magni dolores eos, qui ratione 
-        voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem 
-        ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed 
-        quia non numquam eius modi tempora incidunt, ut labore et dolore 
-        magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, 
-        quis nostrum exercitationem ullam corporis suscipit laboriosam, 
-        nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure 
-        eprehenderit, qui in ea voluptate velit esse, quam nihil molestiae 
-        consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla 
-        pariatur? At vero eos et accusamus et iusto odio dignissimos 
-        ducimus, qui blanditiis praesentium voluptatum deleniti atque 
-        corrupti, quos dolores et quas molestias excepturi sint, obcaecati 
-        cupiditate non provident, similique sunt in culpa, qui officia 
-        deserunt mollitia animi, id est laborum et dolorum fuga. Et harum 
-        quidem rerum facilis est et expedita distinctio. Nam libero tempore, 
-        cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus 
-        id, quod maxime placeat, facere possimus, omnis voluptas assumenda 
-        est, omnis dolor repellendus. Temporibus autem quibusdam et aut 
-        officiis debitis aut rerum necessitatibus saepe eveniet, ut et 
-        voluptates repudiandae sint et molestiae non recusandae. Itaque 
-        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-        voluptatibus maiores alias consequatur aut perferendis doloribus 
-        asperiores repellat.`
+        title: 'JavaScript для начинающих',
+        text:  `В современном мире информационных технологий, JavaScript становится неотъемлемой частью веб-разработки и приобретает все большую популярность. Он является универсальным языком программирования, который может быть использован для различных целей, начиная от создания динамических и интерактивных веб-страниц, до разработки сложных веб-приложений и игр.
+
+        JavaScript обладает множеством возможностей и особенностей, которые делают его мощным инструментом для разработчиков. Возможность работать с DOM (Document Object Model) позволяет изменять и манипулировать содержимым веб-страницы, делая ее динамической и реактивной. Кроме того, JavaScript поддерживает асинхронное программирование, что позволяет выполнять операции без блокирования основного потока выполнения.
+        
+        Благодаря широкой поддержке и активному сообществу разработчиков, JavaScript постоянно развивается и совершенствуется. Появление новых стандартов и возможностей, таких как ECMAScript 6 (ES6) и новые API, делает его еще более мощным и гибким.
+        
+        Однако, такое обширное использование JavaScript также влечет за собой некоторые проблемы. Одной из них является поддержка различных браузеров, так как каждый браузер может интерпретировать код JavaScript по-разному. Для решения этой проблемы часто используются транспиляторы и полифиллы, которые обеспечивают совместимость кода с разными версиями браузеров.
+        
+        Также, из-за своей широкой популярности, JavaScript стал объектом внимания злоумышленников, и в нем могут быть найдены уязвимости, которые могут быть использованы для атак на веб-приложения. Поэтому безопасность является одним из важных аспектов при разработке веб-приложений на JavaScript.
+        
+        В целом, JavaScript - это мощный, гибкий и универсальный язык программирования, который открывает огромные возможности для разработки современных и инновационных веб-приложений. Он продолжает развиваться и становиться все более важным инструментом для разработчиков по всему миру.
+        В современном мире информационных технологий, JavaScript становится неотъемлемой частью веб-разработки и приобретает все большую популярность. Он является универсальным языком программирования, который может быть использован для различных целей, начиная от создания динамических и интерактивных веб-страниц, до разработки сложных веб-приложений и игр.
+
+JavaScript обладает множеством возможностей и особенностей, которые делают его мощным инструментом для разработчиков. Возможность работать с DOM (Document Object Model) позволяет изменять и манипулировать содержимым веб-страницы, делая ее динамической и реактивной. Кроме того, JavaScript поддерживает асинхронное программирование, что позволяет выполнять операции без блокирования основного потока выполнения.
+
+Благодаря широкой поддержке и активному сообществу разработчиков, JavaScript постоянно развивается и совершенствуется. Появление новых стандартов и возможностей, таких как ECMAScript 6 (ES6) и новые API, делает его еще более мощным и гибким.
+
+Однако, такое обширное использование JavaScript также влечет за собой некоторые проблемы. Одной из них является поддержка различных браузеров, так как каждый браузер может интерпретировать код JavaScript по-разному. Для решения этой проблемы часто используются транспиляторы и полифиллы, которые обеспечивают совместимость кода с разными версиями браузеров.
+
+Также, из-за своей широкой популярности, JavaScript стал объектом внимания злоумышленников, и в нем могут быть найдены уязвимости, которые могут быть использованы для атак на веб-приложения. Поэтому безопасность является одним из важных аспектов при разработке веб-приложений на JavaScript.
+
+В целом, JavaScript - это мощный, гибкий и универсальный язык программирования, который открывает огромные возможности для разработки современных и инновационных веб-приложений. Он продолжает развиваться и становиться все более важным инструментом для разработчиков по всему миру.`
     };
 
 

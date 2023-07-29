@@ -29,8 +29,11 @@ const Dashboard = () => {
       "/course-free": "courses",
       "/course-paid": "paid",
       "/about-us": "aboutUs",
-      "profile-page": "profile",
-      "admin-page": "admin",
+      "/profile-page": "profile",
+      "/admin-page/create-course": "admin",
+      "/admin-page/comment-list": "admin",
+      "/admin-page/contact-list": "admin",
+      "/admin-page/request-list": "admin",
     };
 
     const currentPage = pagesMap[pathname] || "main";
@@ -45,6 +48,9 @@ const Dashboard = () => {
     });
   };
 
+  const logout = () => {
+    localStorage.removeItem("user");
+  };
   useEffect(() => {
     onPage();
   }, [pathname]);
@@ -100,16 +106,28 @@ const Dashboard = () => {
           </div>
           <div className="dashboard__wrapper_pages_bottom">
             {menuItemsBottom.map(
-              ({ path, stateKey, imgSrc, alt, label }) => (
-                <div
-                  key={path}
-                  onClick={() => navigate(path)}
-                  className={pageStates[stateKey]}
-                >
-                  <img src={imgSrc} alt={alt} />
-                  <p>{label}</p>
-                </div>
-              )
+              ({ path, stateKey, imgSrc, alt, label }) =>
+                label === "Выйти" ? (
+                  <div
+                    onClick={logout}
+                    key={label}
+                    className={"logout"}
+                  >
+                    <img src={imgSrc} alt={alt} />
+                    <p>{label}</p>
+                  </div>
+                ) : (
+                  <div
+                    key={label}
+                    onClick={() => navigate(path ?? "/")}
+                    className={
+                      pageStates[stateKey as keyof PageStates]
+                    }
+                  >
+                    <img src={imgSrc} alt={alt} />
+                    <p>{label}</p>
+                  </div>
+                )
             )}
           </div>
         </div>

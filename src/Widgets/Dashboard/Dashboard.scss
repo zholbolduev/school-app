@@ -41,14 +41,18 @@
       flex-direction: column;
       align-items: center;
       width: 100%;
-      gap: 30px;
-      .active {
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.5);
-      }
+      gap: 100px;
       &_top,
       &_middle,
       &_bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .active {
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.5);
+        }
+        width: 100%;
         div {
           width: 100%;
           padding: 10px 20px;
