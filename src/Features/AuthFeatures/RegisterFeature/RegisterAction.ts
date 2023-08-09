@@ -6,10 +6,15 @@ import { baseAPI } from "../../../Shared/baseAPI";
 
 export const registerAction =
   (
-    nameSurname: string,
     email: string,
     password: string,
-    confirmPassword: string,
+    fullName: string,
+    nameSurname: string,
+    schoolNumber: string,
+    schoolName: string,
+    grade: string,
+    location: string,
+    // confirmPassword: string,
     agreement: boolean
   ) =>
   async (dispatch: AppDispatch) => {
@@ -66,10 +71,15 @@ export const registerAction =
       // user.append("confirmPassword", passwordConfirm);
 
       const user = {
-        nameSurname,
         email,
         password,
-        confirmPassword,
+        fullName,
+        nameSurname,
+        schoolNumber,
+        schoolName,
+        grade,
+        location,
+        // confirmPassword,
       };
 
       const response = await axios.post<ITokens>(

@@ -72,7 +72,14 @@ const LoginFeature = () => {
         </div>
       </div>
 
-      <button onClick={logToSystem}>Войти</button>
+      <button
+        onClick={() => {
+          // logToSystem();
+          navigate("/");
+        }}
+      >
+        Войти
+      </button>
     </div>
   );
 };

@@ -50,6 +50,7 @@ const Dashboard = () => {
 
   const logout = () => {
     localStorage.removeItem("user");
+    navigate("/login-page");
   };
   useEffect(() => {
     onPage();

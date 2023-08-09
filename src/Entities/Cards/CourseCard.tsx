@@ -39,7 +39,7 @@ const CourseCard: FC<IProps> = ({ card }: IProps) => {
         {card.description}
         Interpersonal skills - work better with others!
       </p>
-      {card.price ? <p className="priceCard">{card.price}</p> : null}
+      {card.price ? <p className="priceCard">{card.price}с</p> : null}
 
       {/* Модальное окно */}
       {isModalOpen && (

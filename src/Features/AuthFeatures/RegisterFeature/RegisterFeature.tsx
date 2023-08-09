@@ -16,9 +16,15 @@ const RegisterFeature = () => {
   const navigate = useNavigate();
   const { error } = useAppSelector((state) => state.registerReducer);
   const [name, setName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [school, setSchool] = useState<string>("");
+  const [schoolNumber, setSchoolNumber] = useState<string>("");
+  const [grade, setGrade] = useState<string>("");
+  const [schoolLocation, setSchoolLocation] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+  // const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [remember, setRemember] = useState<boolean>(false);
   const [agreement, setAgreement] = useState<boolean>(false);
@@ -28,14 +34,19 @@ const RegisterFeature = () => {
     dispatch(
       registerAction(
         name,
+        lastName,
         email,
         password,
-        confirmPassword,
+        schoolNumber,
+        school,
+        schoolLocation,
+        grade,
+        // confirmPassword,
         agreement
       )
     );
-    if (USER_STORAGE === null) return;
-    navigate("/");
+    // if (USER_STORAGE === null) return;
+    // navigate("/");
   };
 
   return (
@@ -50,10 +61,59 @@ const RegisterFeature = () => {
         />
       </div>
       <div className="registerFeature__input">
+        <p>Фамилия</p>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setLastName(e.target.value)
+          }
+          type="text"
+        />
+      </div>
+
+      <div className="registerFeature__input">
         <p>Почта</p>
         <input
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setEmail(e.target.value)
+          }
+          type="text"
+        />
+      </div>
+
+      <div className="registerFeature__input">
+        <p>Школа</p>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSchool(e.target.value)
+          }
+          type="text"
+        />
+      </div>
+      <div className="registerFeature__input">
+        <p>Номер Школы</p>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSchoolNumber(e.target.value)
+          }
+          type="text"
+        />
+      </div>
+
+      <div className="registerFeature__input">
+        <p>Класс(номер)</p>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setGrade(e.target.value)
+          }
+          type="text"
+        />
+      </div>
+
+      <div className="registerFeature__input">
+        <p>Локация</p>
+        <input
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSchoolLocation(e.target.value)
           }
           type="text"
         />
@@ -76,7 +136,7 @@ const RegisterFeature = () => {
         </div>
       </div>
 
-      <div className="registerFeature__input">
+      {/* <div className="registerFeature__input">
         <p>Потвердите Пароль</p>
         <div id="registerFeature__password">
           <input
@@ -91,7 +151,7 @@ const RegisterFeature = () => {
             alt=""
           />
         </div>
-      </div>
+      </div> */}
 
       <p className="registerFeature__warning">{error}</p>
       <div className="registerFeature__additional">
@@ -124,7 +184,13 @@ const RegisterFeature = () => {
         </div>
       </div>
 
-      <button onClick={logToSystem}>Регистрация</button>
+      <button
+        onClick={() => {
+          logToSystem();
+        }}
+      >
+        Регистрация
+      </button>
     </div>
   );
 };
