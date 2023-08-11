@@ -31,7 +31,7 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => {
-              navigate("/");
+              navigate("/course-free");
             }}
             className="dashboard__container_pages_btn"
           >
@@ -40,7 +40,7 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => {
-              navigate("/");
+              navigate("/course-paid");
             }}
             className="dashboard__container_pages_btn"
           >
@@ -67,7 +67,7 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => {
-              navigate("/");
+              navigate("/about-us");
             }}
             className="dashboard__container_pages_btn"
           >
@@ -86,11 +86,17 @@ const Dashboard = () => {
         </div>
         <div className="dashboard__container_line"></div>
         <div className="dashboard__container_log-out">
-          <div className="dashboard__container_log-out_btn">
+          <div
+            onClick={() => navigate("/login-page")}
+            className="dashboard__container_log-out_btn"
+          >
             <img src={login} alt="login" />
             <span>Выйти</span>
           </div>
-          <div className="dashboard__container_log-out_btn">
+          <div
+            onClick={() => navigate("/admin-page")}
+            className="dashboard__container_log-out_btn"
+          >
             <img src={user} alt="user" />
             <span>Админ Панель</span>
           </div>
