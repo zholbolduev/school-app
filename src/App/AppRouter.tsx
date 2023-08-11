@@ -19,7 +19,6 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import CourseVideoPage from "../Pages/Courses/CourseVideoPage/CourseVideoPage";
 import Lecture from "../Pages/LectureTextPage/Lecture";
 import TestPage from "../Pages/TestPage/TestPage";
-import PaidCourseCard from "../Entities/Cards/PaidCourseCard";
 
 const AppRouter = () => {
   return (
@@ -45,10 +44,6 @@ const AppRouter = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/register-page" element={<RegisterPage />} />
-
-      {/* --------------------------- */}
-      <Route path="/pop" element={<PaidCourseCard />} />
-      {/* --------------------------------- */}
 
       <Route path="/login-page" element={<LoginPage />} />
 
