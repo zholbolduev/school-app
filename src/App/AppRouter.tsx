@@ -19,6 +19,7 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import CourseVideoPage from "../Pages/Courses/CourseVideoPage/CourseVideoPage";
 import Lecture from "../Pages/LectureTextPage/Lecture";
 import TestPage from "../Pages/TestPage/TestPage";
+import PaidCourseCard from "../Entities/Cards/PaidCourseCard";
 
 const AppRouter = () => {
   return (
@@ -44,7 +45,6 @@ const AppRouter = () => {
         />
         <Route path="/test-page" element={<TestPage />} />
         <Route path="/text-lecture" element={<Lecture />} />
-        {/* <Route path="/course-video-page/:id" element={<CourseVideoPage />} /> */}
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/register-page" element={<RegisterPage />} />

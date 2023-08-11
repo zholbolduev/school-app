@@ -3,6 +3,7 @@ import CourseCard from "../../../Entities/Cards/CourseCard";
 import "./PaidCourseListWg.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourse } from "./PaidCourseSliceWg";
+import PaidCourseCard from "../../../Entities/Cards/PaidCourseCard";
 
 const PaidCoursesListWg: React.FC = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const PaidCoursesListWg: React.FC = () => {
       <h2>Расписание платных курсов</h2>
       <div className="freeCourseList__wrapper">
         {cards.map((cours) => (
-          <CourseCard key={cours.id} card={cours} />
+          <PaidCourseCard key={cours.id} card={cours} />
         ))}
       </div>
     </div>
