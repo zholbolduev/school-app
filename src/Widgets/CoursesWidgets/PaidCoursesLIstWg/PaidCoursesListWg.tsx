@@ -7,7 +7,7 @@ import { fetchCourse } from "./PaidCourseSliceWg";
 const PaidCoursesListWg: React.FC = () => {
   const dispatch = useDispatch();
 
-  const course = useSelector((state) => state.course); // Получаем состояние о курсе
+  const course = useSelector((state) => state.course);
 
   useEffect(() => {
     dispatch(fetchCourse());
