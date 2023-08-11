@@ -5,9 +5,9 @@ import Dashboard from "../Widgets/Dashboard/Dashboard";
 const AppLayout = () => {
   return (
     <div className="app__layout">
-      <Navbar />
+      <Dashboard />
       <div className="app__layout_wrapper">
-        <Dashboard />
+        <Navbar />
         <div className="app__layout_content">
           <Outlet />
         </div>

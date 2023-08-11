@@ -1,135 +1,98 @@
 import "./Dashboard.scss";
-import logo from "../../Shared/assets/logo-white.svg";
-import magnifer from "./assets/Magnifer.svg";
-import { ChangeEvent, useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router";
-import {
-  menuItemsBottom,
-  menuItemsMiddle,
-  menuItemsTop,
-} from "./menuItems";
-import { PageStates } from "./types";
+import logo from "../../Shared/assets/logo-black.svg";
+import clapperBoard from "./assets/Clapperboard.svg";
+import clipboard from "./assets/Clipboard.svg";
+import document from "./assets/Document.svg";
+import heart from "./assets/Heart.svg";
+import home from "./assets/Home.svg";
+import login from "./assets/Login.svg";
+import notebookFree from "./assets/NotebookFree.svg";
+import notebookPaid from "./assets/NotebookPaid.svg";
+import user from "./assets/User.svg";
+import { useNavigate } from "react-router";
 
 const Dashboard = () => {
-  const [search, setSearch] = useState<string>("");
-  const [pageStates, setPageStates] = useState<PageStates>({
-    main: "",
-    courses: "",
-    paid: "",
-    aboutUs: "",
-    profile: "",
-    admin: "",
-  });
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-
-  const onPage = () => {
-    const pagesMap: { [key: string]: keyof typeof pageStates } = {
-      "/": "main",
-      "/course-free": "courses",
-      "/course-paid": "paid",
-      "/about-us": "aboutUs",
-      "/profile-page": "profile",
-      "/admin-page/create-course": "admin",
-      "/admin-page/comment-list": "admin",
-      "/admin-page/contact-list": "admin",
-      "/admin-page/request-list": "admin",
-    };
-
-    const currentPage = pagesMap[pathname] || "main";
-    setPageStates({
-      ...pageStates,
-      main: currentPage === "main" ? "active" : "",
-      courses: currentPage === "courses" ? "active" : "",
-      paid: currentPage === "paid" ? "active" : "",
-      aboutUs: currentPage === "aboutUs" ? "active" : "",
-      profile: currentPage === "profile" ? "active" : "",
-      admin: currentPage === "admin" ? "active" : "",
-    });
-  };
-
-  const logout = () => {
-    localStorage.removeItem("user");
-    navigate("/login-page");
-  };
-  useEffect(() => {
-    onPage();
-  }, [pathname]);
   return (
     <div className="dashboard">
-      <div className="dashboard__wrapper">
-        <img
-          className="dashboard__wrapper_logo"
-          src={logo}
-          alt="logo"
-        />
-        <div className="dashboard__wrapper_search">
-          <input
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              setSearch(e.target.value)
-            }
-            type="text"
-          />
-          <div>
-            {search ? null : <img src={magnifer} alt="magnifer" />}
+      <div className="dashboard__container">
+        <div className="dashboard__container_logo">
+          <img src={logo} alt="logo" />
+        </div>
+        <div className="dashboard__container_pages">
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={home} alt="home_icon" />
+            <span>Главная</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={notebookFree} alt="notebookFree_icon" />
+            <span>Курсы</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={notebookPaid} alt="notebookPaid_icon" />
+            <span>Платные курсы</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={document} alt="document_icon" />
+            <span>Тесты</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={clapperBoard} alt="clapperBoard_icon" />
+            <span>Видео курсы</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={clipboard} alt="clipboard_icon" />
+            <span>О нас</span>
+          </div>
+          <div
+            onClick={() => {
+              navigate("/");
+            }}
+            className="dashboard__container_pages_btn"
+          >
+            <img src={heart} alt="heart_icon" />
+            <span>Избранное</span>
           </div>
         </div>
-
-        <div className="dashboard__wrapper_pages">
-          <div className="dashboard__wrapper_pages_top">
-            {menuItemsTop.map(
-              ({ path, stateKey, imgSrc, alt, label }) => (
-                <div
-                  key={path}
-                  onClick={() => navigate(path)}
-                  className={pageStates[stateKey]}
-                >
-                  <img src={imgSrc} alt={alt} />
-                  <p>{label}</p>
-                </div>
-              )
-            )}
+        <div className="dashboard__container_line"></div>
+        <div className="dashboard__container_log-out">
+          <div className="dashboard__container_log-out_btn">
+            <img src={login} alt="login" />
+            <span>Выйти</span>
           </div>
-
-          <div className="dashboard__wrapper_pages_middle">
-            {menuItemsMiddle.map(
-              ({ path, stateKey, imgSrc, alt, label }) => (
-                <div
-                  key={path}
-                  onClick={() => navigate(path)}
-                  className={pageStates[stateKey]}
-                >
-                  <img src={imgSrc} alt={alt} />
-                  <p>{label}</p>
-                </div>
-              )
-            )}
-          </div>
-          <div className="dashboard__wrapper_pages_bottom">
-            {menuItemsBottom.map(
-              ({ path, stateKey, imgSrc, alt, label }) =>
-                label === "Выйти" ? (
-                  <div
-                    onClick={logout}
-                    key={label}
-                    className={"logout"}
-                  >
-                    <img src={imgSrc} alt={alt} />
-                    <p>{label}</p>
-                  </div>
-                ) : (
-                  <div
-                    key={label}
-                    onClick={() => navigate(path ?? "/")}
-                    className={
-                      pageStates[stateKey as keyof PageStates]
-                    }
-                  >
-                    <img src={imgSrc} alt={alt} />
-                    <p>{label}</p>
-                  </div>
-                )
-            )}
+          <div className="dashboard__container_log-out_btn">
+            <img src={user} alt="user" />
+            <span>Админ Панель</span>
           </div>
         </div>
       </div>

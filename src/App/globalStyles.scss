@@ -9,8 +9,12 @@
 
 .app__layout {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 19.5% 80.5%;
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   &_content {
-    padding: 165px 55px 70px 340px;
+    padding: 40px 50px 40px 30px;
   }
 }

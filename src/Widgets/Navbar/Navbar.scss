@@ -1,29 +1,57 @@
 .navbar {
   width: 100%;
-  padding: 28px;
-  background-color: #1b1c1f;
-  display: flex;
-  justify-content: flex-end;
-  position: fixed;
-  z-index: 1;
-  height: 94px;
-  img {
-    cursor: pointer;
-  }
-  &__actions {
+  height: 100px;
+  padding: 40px 20px 0 30px;
+
+  &__container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    &_avatar {
+    &_search-form {
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.1);
+      width: 625px;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      input {
+        width: 95%;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: black;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      ::placeholder {
+        color: #808191;
+        font-size: 16px;
+        font-weight: 400;
+      }
+      img {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &_config {
+      margin: 0 30% 0 5%;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 8px;
-      cursor: pointer;
+    }
 
-      span {
-        color: #fff;
-        font-size: 16px;
-        font-weight: 500;
+    &_user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      div {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
       }
     }
   }
