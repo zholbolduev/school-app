@@ -2,7 +2,6 @@ import "./PaidCourseCard.scss";
 import { useState } from "react";
 import { IProps } from "./types";
 import { FC } from "react";
-import photo from "./photo/pana.svg";
 
 const PaidCourseCard: FC<IProps> = ({ card }: IProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -75,9 +74,14 @@ const PaidCourseCard: FC<IProps> = ({ card }: IProps) => {
                   placeholder="Номер телефона"
                 />
               </div>
-              <div>
-                {" "}
-                <img className="photo" src={photo} alt="" />
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <span className="nameModal">JS</span>
+                <span className="descModal">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Asperiores quasi quam, possimus fuga autem distinctio vel.
+                  Molestiae iusto, exercitationem nam consequatur saepe debitis
+                  dignissimos. Consequatur distinctio corrupti nobis aut dolor.
+                </span>
               </div>
             </div>
             <button className="application" onClick={handleSubmit}>
