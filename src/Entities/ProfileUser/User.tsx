@@ -14,7 +14,7 @@ const User = () => {
           <circle cx="75" cy="75" r="75" fill="#CCCCCC" />
         </svg>
         <div className="blockInfoUser">
-          <span className="nameUser">Kapibara BATMAN</span>
+          <span className="nameUser">Name</span>
           <span className="typeUser">student</span>
         </div>
       </div>

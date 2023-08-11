@@ -8,7 +8,8 @@ import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
 import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
 import loginReducer from "../Features/AuthFeatures/LoginFeature/LoginFeatureSlice";
 import registerReducer from "../Features/AuthFeatures/RegisterFeature/RegisterFeatureSlice";
-import detailedCourseReducer  from "../Widgets/DetailsWidgets/DetailedCourseSlice";
+import detailedCourseReducer from "../Widgets/DetailsWidgets/DetailedCourseSlice";
+import courseReducer from "../Widgets/CoursesWidgets/PaidCoursesLIstWg/PaidCourseSliceWg";
 
 const rootReducers = combineReducers({
   [contactListApi.reducerPath]: contactListApi.reducer,
@@ -16,6 +17,7 @@ const rootReducers = combineReducers({
   loginReducer,
   registerReducer,
   detailedCourseReducer,
+  course: courseReducer, // Включите ваш courseReducer в корневой редюсер
 });
 
 export const setupStore = () => {

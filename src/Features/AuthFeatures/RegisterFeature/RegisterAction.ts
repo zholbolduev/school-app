@@ -20,8 +20,7 @@ export const registerAction =
   async (dispatch: AppDispatch) => {
     try {
       dispatch(registerFeatureSlice.actions.setLoading());
-      const emailPattern =
-        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
       if (nameSurname.length > 20) {
         console.log(nameSurname.length);
@@ -35,9 +34,7 @@ export const registerAction =
 
       if (!emailPattern.test(email)) {
         dispatch(
-          registerFeatureSlice.actions.setError(
-            "Введите действительную почту"
-          )
+          registerFeatureSlice.actions.setError("Введите действительную почту")
         );
         return;
       }
@@ -57,9 +54,7 @@ export const registerAction =
 
       if (!agreement) {
         dispatch(
-          registerFeatureSlice.actions.setError(
-            "Примите условия соглашения"
-          )
+          registerFeatureSlice.actions.setError("Примите условия соглашения")
         );
         return;
       }
@@ -83,7 +78,7 @@ export const registerAction =
       };
 
       const response = await axios.post<ITokens>(
-        `${baseAPI}/register`,
+        `http://192.168.0.124:8082/register`,
         user,
         {
           headers: {
