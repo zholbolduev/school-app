@@ -39,7 +39,7 @@ const AppRouter = () => {
         <Route path="/course-free" element={<FreeCoursePage />} />
         <Route path="/course-paid" element={<PaidCoursePage />} />
         <Route
-          path="/course-free-details"
+          path="/course-free-details/:id"
           element={<CourseVideoPage />}
         />
         <Route path="/test-page" element={<TestPage />} />

@@ -3,9 +3,34 @@ import mag from "./assets/mag.svg";
 import config from "./assets/configIcon.svg";
 import arrow from "./assets/chevron_down.svg";
 import { useNavigate } from "react-router";
+import axios from "axios";
+import { baseAPI } from "../../Shared/baseAPI";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const storage: any = localStorage.getItem("user");
+  const [user, setUser] = useState<string>("");
+
+  const userStorage = JSON.parse(storage);
+  const access = userStorage.refresh_token;
+
+  const getUser = async () => {
+    const Authorization = `Bearer ${access}`;
+    const config = {
+      headers: { Authorization },
+    };
+    const response = await axios.get(
+      `${baseAPI}/user/personal-info`,
+      config
+    );
+
+    setUser(response.data.fullName);
+  };
+
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <div className="navbar">
       <div className="navbar__container">
@@ -21,7 +46,7 @@ const Navbar = () => {
           className="navbar__container_user"
         >
           <div></div>
-          <span>Алибек</span>
+          <span>{user}</span>
           <img src={arrow} alt="arrow" />
         </div>
       </div>
