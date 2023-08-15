@@ -36,7 +36,7 @@ export default courseSlice.reducer;
 export const fetchCourse = (): AppThunk => async (dispatch) => {
   try {
     const response = await axios.get<CourseData>(
-      `http://192.168.43.19:8082/user/course/get/all`
+      `http://172.20.10.6:8082/user/course/paid/get/all`
     );
     console.log(response.data);
     dispatch(setCourse(response.data));
