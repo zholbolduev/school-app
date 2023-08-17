@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-import { AppThunk } from "../../../App/rootStore";
-import { baseAPI } from "../../../Shared/baseAPI";
+import { AppThunk } from "../../App/rootStore";
+import { baseAPI } from "../../Shared/baseAPI";
 
 interface CourseData {
   name: string;
@@ -35,9 +35,7 @@ export default courseSlice.reducer;
 
 export const fetchCourse = (): AppThunk => async (dispatch) => {
   try {
-    const response = await axios.get<CourseData>(
-      `${baseAPI}/user/course/get/all`
-    );
+    const response = await axios.get<CourseData>(`${baseAPI}/user/favorite`);
     console.log(response.data);
     dispatch(setCourse(response.data));
   } catch (error) {

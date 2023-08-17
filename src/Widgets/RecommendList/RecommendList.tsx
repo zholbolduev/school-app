@@ -1,37 +1,36 @@
+import { useEffect, useState } from "react";
 import CourseCard from "../../Entities/Cards/CourseCard";
+import FreeCourseCard from "../../Entities/Cards/FreeCourseCard/FreeCourseCard";
 import "./RecommendList.scss";
+import axios from "axios";
+import { baseAPI } from "../../Shared/baseAPI";
+import { IFreeCard } from "../../Entities/Cards/FreeCourseCard/types";
 
 const RecommendList = () => {
-  const cards = [
-    {
-      id: 1,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      type: "paid",
-    },
-    {
-      id: 2,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "300",
-      type: "paid",
-    },
-    {
-      id: 3,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "300",
-      type: "paid",
-    },
-  ];
+  const [courses, setCourses] = useState<IFreeCard[]>([]);
+
+  const getCourses = async () => {
+    const response = await axios.get<IFreeCard[]>(
+      `${baseAPI}/user/course/get/all`
+    );
+    setCourses(response.data);
+
+    console.log(response.data);
+  };
+  useEffect(() => {
+    getCourses();
+  }, []);
   return (
     <div className="recommendList">
       <div className="recommendList__wrapper">
-        {cards.map((card) => (
-          <CourseCard key={card.id} card={card} />
+        {courses.map((course) => (
+          <FreeCourseCard
+            id={course.id}
+            key={course.id}
+            name={course.name}
+            description={course.description}
+            img={course.img}
+          />
         ))}
       </div>
     </div>

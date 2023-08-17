@@ -1,0 +1,69 @@
+.freeCourseCard {
+  width: 255px;
+  height: 300px;
+  margin-bottom: 15px;
+  &__img {
+    height: 65%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 32px 32px 0 0;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      border-radius: 32px 32px 0 0;
+      background-color: #d9d9d9;
+      position: absolute;
+      z-index: -1;
+    }
+    &_favorite {
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background-color: #fffffd;
+        cursor: pointer;
+
+        img {
+          width: 15px;
+          height: 15px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  &__text {
+    height: 35%;
+    border-radius: 0px 0px 20px 20px;
+    background-color: #2b59c3;
+    padding: 20px;
+    color: #fffffd;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    span {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

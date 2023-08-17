@@ -9,7 +9,6 @@ import eye from "../assets/eye.svg";
 import eye_closed from "../assets/eyeslash.svg";
 import { AiOutlineCheck } from "react-icons/ai";
 import { useNavigate } from "react-router";
-import { USER_STORAGE } from "../../../Shared/storage";
 
 const RegisterFeature = () => {
   const dispatch = useAppDispatch();
@@ -19,7 +18,7 @@ const RegisterFeature = () => {
   const [lastName, setLastName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [school, setSchool] = useState<string>("");
-  const [schoolNumber, setSchoolNumber] = useState<string>("");
+  const [schoolNumber, setSchoolNumber] = useState<number>(0);
   const [grade, setGrade] = useState<string>("");
   const [schoolLocation, setSchoolLocation] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -33,10 +32,10 @@ const RegisterFeature = () => {
   const logToSystem = () => {
     dispatch(
       registerAction(
-        name,
-        lastName,
         email,
         password,
+        name,
+        lastName,
         schoolNumber,
         school,
         schoolLocation,
@@ -93,7 +92,7 @@ const RegisterFeature = () => {
         <p>Номер Школы</p>
         <input
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            setSchoolNumber(e.target.value)
+            setSchoolNumber(Number(e.target.value))
           }
           type="text"
         />

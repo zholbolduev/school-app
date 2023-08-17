@@ -22,7 +22,7 @@ const LoginFeature = () => {
 
   const logToSystem = () => {
     dispatch(loginAction(email, password));
-    navigate("/");
+    // navigate("/");
   };
 
   return (
@@ -74,8 +74,8 @@ const LoginFeature = () => {
 
       <button
         onClick={() => {
-          // logToSystem();
-          navigate("/");
+          logToSystem();
+          // navigate("/");
         }}
       >
         Войти

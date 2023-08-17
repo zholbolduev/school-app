@@ -1,0 +1,41 @@
+.profileWidgets {
+  display: flex;
+  gap: 60px;
+
+  &__img {
+    img {
+      border-radius: 50%;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h5 {
+      color: #000;
+      font-size: 32px;
+      font-weight: 500;
+    }
+
+    div {
+      display: grid;
+      grid-template-columns: 45% 45%;
+      justify-content: space-between;
+
+      input {
+        padding: 10px;
+        color: #6f6f6f;
+        font-size: 24px;
+        font-weight: 400;
+        border-radius: 17px;
+        background-color: #fff;
+        width: 371px;
+        height: 60px;
+        margin: 5px;
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
