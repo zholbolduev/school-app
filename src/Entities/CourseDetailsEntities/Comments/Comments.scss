@@ -54,6 +54,7 @@
 
 .comment {
 
+    width: 100%;
     padding-top: 15px;
     display: flex;
     margin: 5px 0 5px 0;
@@ -65,14 +66,33 @@
 
     .comment-right-part {
         margin-left: 20px;
+        width: 100%;
 
         .comment-content {
             display: flex;
+            width: 100%;
             justify-content: space-between;
+            align-items: center;
 
             .comment-author {
                 font-size: 20px;
                 color: rgb(59, 130, 246);
+            }
+        }
+
+        .comment-actions {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+
+            .comment-action {
+                margin: 0px 8px 0px 8px;
+                font-size: 14px;
+                color: #2B59C3;
+            }
+
+            .comment-action:hover {
+                cursor: pointer;
             }
         }
     }

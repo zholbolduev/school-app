@@ -1,7 +1,7 @@
 import { CommentForm } from "./CommentForm";
 import './Comments.scss';
 import { FC, useState, useEffect } from "react";
-import { createComment, getComments } from "../../../Widgets/CommentWidgets/CommentsApi";
+import { createComment, getComments, deleteComment } from "../../../Widgets/CommentWidgets/CommentsApi";
 import { IComments } from "../../../Widgets/CommentWidgets/types";
 import { Comment } from "./Comment";
 
@@ -12,6 +12,8 @@ interface IUser {
 export const Comments: FC<IUser> = ({currentUserId}) => {
 
     const [commentsArray, setCommentsArray] = useState<IComments[]>([]);
+    const [replyCommentId, setReplyCommentId] = useState<string | null>(null);
+    const [reply, setReply] = useState(false);
     const rootComments = commentsArray.filter(
         (comment) => {
             return comment.parentId === null;
@@ -34,6 +36,16 @@ export const Comments: FC<IUser> = ({currentUserId}) => {
         })
     }
 
+    const deleteMyComment = (id: string) => {
+        deleteComment()
+        .then(() => {
+            const update = commentsArray.filter((item) => {
+                return item.id !== id;
+            });
+            setCommentsArray(update);
+        })
+    }
+
     useEffect(() => {
         getComments()
         .then(data => {
@@ -41,20 +53,22 @@ export const Comments: FC<IUser> = ({currentUserId}) => {
         })
     }, []);
 
-    console.log(currentUserId);
-    console.log(commentsArray);
-
     return (
         <div className="comments">
             <h2>Комментарии</h2>
-            <CommentForm handleSubmit={addComment} />
+            <CommentForm handleSubmit={addComment}
+                isReply={!!replyCommentId}
+                commentId={replyCommentId} />
             <div className="commentsContainer">
                 {
                     rootComments.map(rootComment => (
                         <Comment 
                             key={rootComment.id} 
                             comment={rootComment}
-                            replies={getReplies(rootComment.id)}/>
+                            replies={getReplies(rootComment.id)}
+                            currentUserId={currentUserId}
+                            deleteMyComment={deleteMyComment}
+                            setReplyCommentId={setReplyCommentId} />
                     ))
                 }
             </div>

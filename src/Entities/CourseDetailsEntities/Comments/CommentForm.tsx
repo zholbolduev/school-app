@@ -3,16 +3,19 @@ import './Comments.scss';
 
 interface ICommentFormProps {
     handleSubmit: (text: string, parentId: null) => void;
+    isReply: boolean;
+    commentId: string | null;
 }
 
-export const CommentForm: FC<ICommentFormProps> = ({handleSubmit}) => {
+export const CommentForm: FC<ICommentFormProps> = ({handleSubmit, isReply, commentId}) => {
 
-    const [comment, setComment] = useState('');
+    const [commentText, setCommentText] = useState('');
+    const parentId = isReply ? commentId : null;
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        comment.length > 0 && handleSubmit(comment, null);
-        setComment('');
+        commentText.length > 0 && handleSubmit(commentText, parentId);
+        setCommentText('');
     }
 
     return (
@@ -22,9 +25,9 @@ export const CommentForm: FC<ICommentFormProps> = ({handleSubmit}) => {
                     className='commentInput'
                     type="text" 
                     placeholder="Оставить комментарий" 
-                    value={comment}
+                    value={commentText}
                     onChange={(event) => {
-                        setComment(event.target.value);
+                        setCommentText(event.target.value);
                     }}   />
                 <input 
                     className='commentButton'
