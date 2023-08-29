@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import "./PaidCourseListWg.scss";
+import React from "react";
+import "./FavoriteWidgets.scss";
+import { fetchCourse } from "./FavoriteSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCourse } from "./PaidCourseSliceWg";
-import PaidCourseCard from "../../../Entities/Cards/PaidCourseCard/PaidCourseCard";
+import PaidCourseCard from "../../Entities/Cards/PaidCourseCard/PaidCourseCard";
 
-const PaidCoursesListWg: React.FC = () => {
+const FavoriteWidgets: React.FC = () => {
   const dispatch = useDispatch();
 
   const course = useSelector((state) => state.course);
@@ -25,9 +25,9 @@ const PaidCoursesListWg: React.FC = () => {
     : [];
 
   return (
-    <div className="PaidCourseList">
-      <h2>Платные курсы</h2>
-      <div className="freeCourseList__wrapper">
+    <div className="favorite">
+      <h2>Избранное</h2>
+      <div className="favorite__wrapper">
         {cards.map((cours) => (
           <PaidCourseCard key={cours.id} card={cours} />
         ))}
@@ -36,4 +36,4 @@ const PaidCoursesListWg: React.FC = () => {
   );
 };
 
-export default PaidCoursesListWg;
+export default FavoriteWidgets;

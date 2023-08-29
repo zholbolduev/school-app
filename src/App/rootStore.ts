@@ -17,7 +17,7 @@ const rootReducers = combineReducers({
   loginReducer,
   registerReducer,
   detailedCourseReducer,
-  course: courseReducer, // Включите ваш courseReducer в корневой редюсер
+  course: courseReducer,
 });
 
 export const setupStore = () => {

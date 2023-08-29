@@ -76,7 +76,7 @@ const Dashboard = () => {
           </div>
           <div
             onClick={() => {
-              navigate("/");
+              navigate("/favorite");
             }}
             className="dashboard__container_pages_btn"
           >

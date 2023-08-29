@@ -13,17 +13,14 @@ const Navbar = () => {
   const [user, setUser] = useState<string>("");
 
   const userStorage = JSON.parse(storage);
-  const access = userStorage.refresh_token;
+  // const access = userStorage.refresh_token;
 
   const getUser = async () => {
-    const Authorization = `Bearer ${access}`;
+    // const Authorization = `Bearer ${access}`;
     const config = {
-      headers: { Authorization },
+      // headers: { Authorization },
     };
-    const response = await axios.get(
-      `${baseAPI}/user/personal-info`,
-      config
-    );
+    const response = await axios.get(`${baseAPI}/user/personal-info`, config);
 
     setUser(response.data.fullName);
   };
