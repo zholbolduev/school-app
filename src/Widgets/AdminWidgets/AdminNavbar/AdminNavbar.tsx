@@ -4,7 +4,7 @@ import "./AdminNavbar.scss";
 const AdminNavbar = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="adminNavbar">
       <button onClick={() => navigate("create-course")}>
         CRUD COURSES
       </button>

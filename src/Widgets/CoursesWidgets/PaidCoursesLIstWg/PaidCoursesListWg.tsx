@@ -1,41 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CourseCard from "../../../Entities/Cards/CourseCard";
 import "./PaidCourseListWg.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCourse } from "./PaidCourseSliceWg";
+import PaidCourseCard from "../../../Entities/Cards/PaidCourseCard";
 
 const PaidCoursesListWg: React.FC = () => {
-  const cards = [
-    {
-      id: 1,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "980",
-      type: "paid",
-    },
-    {
-      id: 2,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "310",
-      type: "paid",
-    },
-    {
-      id: 3,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      price: "390",
-      type: "paid",
-    },
-  ];
+  const dispatch = useDispatch();
+
+  const course = useSelector((state) => state.course);
+
+  useEffect(() => {
+    dispatch(fetchCourse());
+  }, [dispatch]);
+
+  const cards = course
+    ? course.map((courseItem, index) => ({
+        id: index + 1,
+        title: courseItem.name,
+        description: courseItem.description,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
+        price: courseItem.price,
+        type: "paid",
+      }))
+    : [];
 
   return (
     <div className="PaidCourseList">
-      <h2>Платные курсы</h2>
+      <h2>Расписание платных курсов</h2>
       <div className="freeCourseList__wrapper">
-        {cards.map((card) => (
-          <CourseCard key={card.id} card={card} />
+        {cards.map((cours) => (
+          <PaidCourseCard key={cours.id} card={cours} />
         ))}
       </div>
     </div>

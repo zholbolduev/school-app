@@ -1,40 +1,38 @@
 import React from "react";
-import CourseCard from "../../../Entities/Cards/CourseCard";
+// import CourseCard from "../../../Entities/Cards/CourseCard";
 import "./FreeCourseList.scss";
+import FreeCourseCard from "../../../Entities/Cards/FreeCourseCard/FreeCourseCard";
+import axios from "axios";
+import { IFreeCard } from "../../../Entities/Cards/FreeCourseCard/types";
+import { baseAPI } from "../../../Shared/baseAPI";
+import { useEffect, useState } from "react";
 
 const FreeCoursesList: React.FC = () => {
-  const cards = [
-    {
-      id: 1,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      // price: "30",
-      type: "paid",
-    },
-    {
-      id: 2,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      // price: "30",
-      type: "paid",
-    },
-    {
-      id: 3,
-      title: "JS",
-      description: "Interpersonal skills - work better with others!",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
-      // price: "900",
-      type: "paid",
-    },
-  ];
+  const [courses, setCourses] = useState<IFreeCard[]>([]);
+
+  const getCourses = async () => {
+    const response = await axios.get<IFreeCard[]>(
+      `${baseAPI}/user/course/get/all`
+    );
+    setCourses(response.data);
+
+    console.log(response.data)
+  };
+  useEffect(() => {
+    getCourses();
+  }, []);
   return (
     <div className="freeCourseList">
       <h2>Бесплатные курсы</h2>
       <div className="freeCourseList__wrapper">
-        {cards.map((card) => (
-          <CourseCard key={card.id} card={card} />
+        {courses.map((course) => (
+          <FreeCourseCard
+            id={course.id}
+            key={course.id}
+            name={course.name}
+            description={course.description}
+            img={course.img}
+          />
         ))}
       </div>
     </div>

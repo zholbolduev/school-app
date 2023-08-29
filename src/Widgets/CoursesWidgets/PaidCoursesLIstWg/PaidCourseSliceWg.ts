@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { AppThunk } from "../../../App/rootStore";
 import { baseAPI } from "../../../Shared/baseAPI";
+// import { baseAPI } from "../../../Shared/baseAPI";
 
 interface CourseData {
   name: string;
@@ -33,16 +34,15 @@ export default courseSlice.reducer;
 
 // -------------------REQUEST-----------------------
 
-export const fetchCourse =
-  (courseId: number): AppThunk =>
-  async (dispatch) => {
-    try {
-      const response = await axios.get<CourseData>(
-        `${baseAPI}/admin/course/get/all`
-      );
-      console.log(response.data);
-      dispatch(setCourse(response.data));
-    } catch (error) {
-      console.error("Ошибка при получении данных о курсе:", error);
-    }
-  };
+export const fetchCourse = (): AppThunk => async (dispatch) => {
+  try {
+    const response = await axios.get<CourseData>(
+      `${baseAPI}/user/course/get/all`
+    );
+    console.log(response.data);
+    dispatch(setCourse(response.data));
+  } catch (error) {
+    console.error("Ошибка при получении данных о курсе:", error);
+    dispatch(setCourse(null));
+  }
+};
