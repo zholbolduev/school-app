@@ -20,6 +20,7 @@ const CourseCard: FC<IProps> = ({ card }: IProps) => {
     // отправка данных на сервер
     closeModal();
   };
+  
   return (
     <div className="card">
       <div className="blockCard">

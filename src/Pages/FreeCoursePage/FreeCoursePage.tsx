@@ -1,4 +1,5 @@
 import Banner from "../../Widgets/Banner/Banner";
+import ContactBtn from "../../Widgets/ContactBtn/ContactBtn";
 import FreeCoursesList from "../../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCoursesList";
 import "./FreeCoursePage.scss";
 
@@ -7,6 +8,7 @@ const FreeCoursePage = () => {
     <div>
       <Banner />
       <FreeCoursesList />
+      <ContactBtn />
     </div>
   );
 };

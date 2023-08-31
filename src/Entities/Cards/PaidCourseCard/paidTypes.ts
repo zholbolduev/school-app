@@ -1,7 +1,7 @@
 interface ICard {
   title: string;
   description: string;
-  start: string;
+  duration: string;
   price?: string;
   img: string;
   type: string;

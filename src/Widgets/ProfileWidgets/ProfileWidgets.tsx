@@ -17,17 +17,20 @@ const ProfileWidgets = () => {
     const config = {
       headers: { Authorization },
     };
-    const response = await axios.get(
-      `${baseAPI}/user/personal-info`,
-      config
-    );
 
-    setUser(response.data);
+    try {
+      const response = await axios.get(`${baseAPI}/user/personal-info`, config);
+      setUser(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
   };
 
   useEffect(() => {
     getUser();
   }, []);
+
   return (
     <div className="profileWidgets">
       <div className="profileWidgets__img">

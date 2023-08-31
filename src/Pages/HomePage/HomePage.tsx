@@ -1,4 +1,5 @@
 import Banner from "../../Widgets/Banner/Banner";
+import ContactBtn from "../../Widgets/ContactBtn/ContactBtn";
 import RecommendList from "../../Widgets/RecommendList/RecommendList";
 import "./HomePage.scss";
 
@@ -7,6 +8,7 @@ const HomePage = () => {
     <div>
       <Banner />
       <RecommendList />
+      <ContactBtn />
     </div>
   );
 };

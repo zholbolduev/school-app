@@ -1,0 +1,69 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin-left: 28%;
+    color: #1b1c1f;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &_name {
+    display: flex;
+    width: 410px;
+    padding: 16px 340px 16px 24px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #7c7c7c;
+    background: #fff;
+    margin-top: 10px;
+  }
+
+  &_email {
+    display: flex;
+    width: 410px;
+    padding: 16px 340px 16px 24px;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid #af9c9c;
+    background: #fff;
+    margin-top: 10px;
+  }
+
+  &_btn {
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    width: 410px;
+    height: 50px;
+    padding: 14px 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: #2b59c3;
+    margin-top: 10px;
+  }
+}
+
+/* Добавьте дополнительные стили по вашему усмотрению */

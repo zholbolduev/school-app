@@ -41,14 +41,10 @@ const AppRouter = () => {
         <Route path="/course-free" element={<FreeCoursePage />} />
         <Route path="/course-paid" element={<PaidCoursePage />} />
         <Route path="/favorite" element={<FavoritePage />} />
-
-        {/* ------------------------PaidCard----------------- */}
-        <Route path="/paid-card" element={<PaidCourseCard />} />
-        {/* ------------------------PaidCard----------------- */}
-
         <Route path="/course-free-details/:id" element={<CourseVideoPage />} />
         <Route path="/test-page" element={<TestPage />} />
-        <Route path="/text-lecture" element={<Lecture />} />
+        <Route path="/text-lecture" element={<Lecture 
+        />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
       <Route path="/register-page" element={<RegisterPage />} />
