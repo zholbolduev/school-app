@@ -19,6 +19,7 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import CourseVideoPage from "../Pages/Courses/CourseVideoPage/CourseVideoPage";
 import Lecture from "../Pages/LectureTextPage/Lecture";
 import TestPage from "../Pages/TestPage/TestPage";
+import EditPage from "../Pages/EditPage/EditPage";
 
 const AppRouter = () => {
   return (
@@ -41,6 +42,10 @@ const AppRouter = () => {
         <Route
           path="/course-free-details/:id"
           element={<CourseVideoPage />}
+        />
+        <Route
+          path="/course-free-edit/:id"
+          element={<EditPage />}
         />
         <Route path="/test-page" element={<TestPage />} />
         <Route path="/text-lecture" element={<Lecture />} />

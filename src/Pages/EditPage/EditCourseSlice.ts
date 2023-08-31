@@ -1,19 +1,19 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface INewCourse {
+interface IEditCourse {
   isLoading: boolean;
   response: string;
   error: string;
 }
 
-const initialState: INewCourse = {
+const initialState: IEditCourse = {
   isLoading: true,
   response: "",
   error: "",
 };
 
-export const newCourseSlice = createSlice({
-  name: "newCourseSlice",
+export const editCourseSlice = createSlice({
+  name: "editCourseSlice",
   initialState,
   reducers: {
     setResponse(state, action: PayloadAction<string>) {
@@ -25,4 +25,4 @@ export const newCourseSlice = createSlice({
   },
 });
 
-export default newCourseSlice.reducer;
+export default editCourseSlice.reducer;

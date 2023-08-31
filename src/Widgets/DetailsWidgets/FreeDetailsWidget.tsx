@@ -8,11 +8,12 @@ import "./DetailsWidget.scss";
 import { Description } from "../../Entities/CourseDetailsEntities/Description/Description";
 import { RecomendedVideos } from "../../Entities/CourseDetailsEntities/Video/RecomendedVideos/RecomendedVideos";
 import { Comments } from "../../Entities/CourseDetailsEntities/Comments/Comments";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { baseAPI } from "../../Shared/baseAPI";
 
 export const FreeDetailsWidget = () => {
+  const navigate = useNavigate();
   const [courseData, setCourseData] = useState<ICourseData | null>(
     null
   );
@@ -25,7 +26,7 @@ export const FreeDetailsWidget = () => {
     setCourseData(data);
   }, [data]);
 
-  const [freeCourse, setFreeCourse] = useState<object>({
+  const [freeCourse, setFreeCourse] = useState<any>({
     name: "",
     description: "",
   });
@@ -48,6 +49,10 @@ export const FreeDetailsWidget = () => {
     <div className="details-container">
       <div className="details-top">
         <h1>{freeCourse.name}</h1>
+
+        <button onClick={() => navigate(`/course-free-edit/${id}`)}>
+          edit
+        </button>
       </div>
       <div className="details-center-container">
         <Video />

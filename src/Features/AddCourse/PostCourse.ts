@@ -7,41 +7,42 @@ export const postCourse =
   (
     name: string,
     description: string,
-    courseType: number,
+    courseType: string,
     duration: number,
-    lectureQuantity: number
+    lectureQuantity: number,
+    courseDirection: string
   ) =>
   async (dispatch: AppDispatch) => {
     try {
-      const course = new FormData();
-
-      course.append("name", name);
-      course.append("description", description);
-      course.append("courseType", courseType.toString());
-      course.append("duration", duration.toString());
-      course.append("lectureQuantity", lectureQuantity.toString());
-
-      console.log(
+      const newCourse = {
         name,
         description,
         courseType,
         duration,
-        lectureQuantity
-      );
+        lectureQuantity,
+        courseDirection,
+      };
+
+      console.log(newCourse)
+
+      const a = {
+        name: "молоко",
+        description: "fromnt dev is",
+        // "price": 11230.0,
+        courseType: "FREE",
+        duration: 990,
+        lectureQuantity: 10,
+        courseDirection: "MOBILE",
+      };
 
       const response = await axios.post(
-        `${baseAPI}/admin/course/create`,
-        course,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data", // Указываем правильный заголовок для FormData
-          },
-        }
+        `${baseAPI}/admin/course/free/create`,
+        a
       );
 
-      console.log(response.data);
       dispatch(newCourseSlice.actions.setResponse(response.data));
     } catch (error: any) {
       dispatch(newCourseSlice.actions.setError(error.message));
+      console.log(error.message);
     }
   };

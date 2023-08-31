@@ -10,10 +10,10 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const navigate = useNavigate();
   const storage: any = localStorage.getItem("user");
-  const [user, setUser] = useState<string>("");
+  const [user, setUser] = useState<string>("name");
 
   const userStorage = JSON.parse(storage);
-  const access = userStorage.refresh_token;
+  const access = userStorage?.access_token;
 
   const getUser = async () => {
     const Authorization = `Bearer ${access}`;
@@ -28,9 +28,9 @@ const Navbar = () => {
     setUser(response.data.fullName);
   };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
   return (
     <div className="navbar">
       <div className="navbar__container">
