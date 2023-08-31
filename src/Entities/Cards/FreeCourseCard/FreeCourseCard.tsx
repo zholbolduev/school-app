@@ -14,10 +14,15 @@ const FreeCourseCard: FC<IFreeCard> = ({
 }: IFreeCard) => {
   const navigate = useNavigate();
 
-  const deleteCard = async (id: number) => {
-    const response = await axios.delete(
-      `${baseAPI}/admin/course/delete/${id}`
+  const getCourses = async () => {
+    await axios.get<IFreeCard[]>(
+      `${baseAPI}/user/course/free/get/all?courseType=FREE`
     );
+  };
+
+  const deleteCard = async (id: number) => {
+    await axios.delete(`${baseAPI}/admin/course/delete/${id}`);
+    getCourses();
   };
   return (
     <div className="freeCourseCard">
