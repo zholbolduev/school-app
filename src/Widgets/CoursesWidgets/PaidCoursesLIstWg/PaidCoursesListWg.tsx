@@ -23,7 +23,7 @@ const PaidCoursesListWg: React.FC = () => {
         price: courseItem.price,
       }))
     : [];
-
+  // зщз
   return (
     <div className="PaidCourseList">
       <h2>Платные курсы</h2>
