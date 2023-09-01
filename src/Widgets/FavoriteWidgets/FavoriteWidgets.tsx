@@ -35,12 +35,12 @@ const FavoriteWidgets: React.FC = () => {
   console.log(userFavorites);
 
   const cards = userFavorites.map((courseItem, index) => ({
-    id: index + 1,
-    title: courseItem.name,
+    id: courseItem.id,
+    name: courseItem.name,
     description: courseItem.description,
+    duration: courseItem.duration,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
     price: courseItem.price,
-    type: "paid",
   }));
 
   return (

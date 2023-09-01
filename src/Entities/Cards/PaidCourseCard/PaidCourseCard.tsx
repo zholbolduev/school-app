@@ -24,7 +24,7 @@ const Modal = ({ card, closeModal, handleSubmit }) => (
           />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <span className="modal_nameCourse">{card.title}</span>
+          <span className="modal_nameCourse">{card.name}</span>
           <span className="modal_descCourse">{card.description}</span>
         </div>
       </div>
@@ -151,15 +151,11 @@ const PaidCourseCard: React.FC<IProps> = ({ card }: IProps) => {
         />
       </div>
       <div className="paidCourseCard_infoBlock">
-        <p className="paidCourseCard_start">{card.duration}2020</p>
-        <span className="paidCourseCard_name">{card.title}</span>
-        <span className="paidCourseCard_desc">
-          {card.description}lorem10 Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Laborum, provident quibusdam dolor qui harum ipsa et
-          fuga quos natus esse.
-        </span>
+        <p className="paidCourseCard_start">{card.duration}</p>
+        <span className="paidCourseCard_name">{card.name}</span>
+        <span className="paidCourseCard_desc">{card.description}</span>
         <div className="paidCourseCard_priceBlock">
-          <span className="paidCourseCard_priceLife">{card.price}900</span>
+          <span className="paidCourseCard_priceLife">{card.price}</span>
           <span className="paidCourseCard_priceNo"></span>
 
           <button onClick={openModal} className="paidCourseCard_btn">

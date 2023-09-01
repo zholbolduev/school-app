@@ -12,11 +12,9 @@ const FreeCoursesList: React.FC = () => {
 
   const getCourses = async () => {
     const response = await axios.get<IFreeCard[]>(
-      `${baseAPI}/user/course/get/all`
+      `${baseAPI}/user/course/free/get/all?courseType=FREE`
     );
     setCourses(response.data);
-
-    console.log(response.data)
   };
   useEffect(() => {
     getCourses();
