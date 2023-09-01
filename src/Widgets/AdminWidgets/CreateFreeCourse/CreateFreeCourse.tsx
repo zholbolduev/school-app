@@ -27,7 +27,8 @@ const CreateFreeCourse = () => {
   const [description, setDescription] = useState<string>("");
   const [duration, setDuration] = useState<number>(0);
   const [lectureQuantity, setLectureQuantity] = useState<number>(0);
-  const [courseDirection, setCourseDirection] = useState<string>("");
+  const [courseDirection, setCourseDirection] =
+    useState<string>("BACKEND");
 
   return (
     <div className="createFreeCourse">
@@ -65,7 +66,9 @@ const CreateFreeCourse = () => {
         <div className="createFreeCourse__input">
           <p>Направление</p>
           <select
+            value={courseDirection}
             onChange={(e) => {
+              console.log(e.target.value);
               setCourseDirection(e.target.value);
             }}
           >

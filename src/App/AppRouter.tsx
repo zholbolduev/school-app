@@ -18,6 +18,8 @@ import CreateFreeCourse from "../Widgets/AdminWidgets/CreateFreeCourse/CreateFre
 import CreatePaidCourse from "../Widgets/AdminWidgets/CreatePaidCourse/CreatePaidCourse";
 import ContactList from "../Widgets/AdminWidgets/ContactList/ContactList";
 import RequestList from "../Widgets/AdminWidgets/RequestList/RequestList";
+import VideoPlayer from "../Widgets/VideoPlayer/VideoPlayer";
+import CreateVideoLecture from "../Widgets/AdminWidgets/CreateVideoLecture/CreateVideoLecture";
 
 const AppRouter = () => {
   return (
@@ -32,6 +34,10 @@ const AppRouter = () => {
           <Route path="create-paid" element={<CreatePaidCourse />} />
           <Route path="contact-list" element={<ContactList />} />
           <Route path="request-list" element={<RequestList />} />
+          <Route
+            path="create-video-lecture"
+            element={<CreateVideoLecture />}
+          />
         </Route>
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/profile-page" element={<ProfilePage />} />
@@ -42,6 +48,7 @@ const AppRouter = () => {
           path="/course-free-details/:id"
           element={<CourseVideoPage />}
         />
+        <Route path="/watch/:id" element={<VideoPlayer />} />
         <Route path="/course-free-edit/:id" element={<EditPage />} />
         <Route path="/test-page" element={<TestPage />} />
         <Route path="/text-lecture" element={<Lecture />} />

@@ -1,64 +1,90 @@
 .dashboard {
-  width: 100%;
-  // height: 100vh;
-  background: #fffffd;
+  background: #fff;
   box-shadow: 6px 4px 11px 0px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-  padding: 30px 10px 30px 10px;
-  position: relative;
+  min-height: 800px;
+
   &__container {
-    width: 100%;
+    width: 19.5%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 81px 1fr;
+    height: 100vh;
+    padding: 30px 20px;
+    position: fixed;
+  }
 
-    &_logo {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 100px;
-      cursor: pointer;
+  &__container-none {
+    display: grid;
+    grid-template-rows: 1fr 1fr 81px 1fr;
+    height: 100vh;
+    padding: 30px 20px;
+    position: fixed;
+  }
+
+  &__logo-none {
+    height: 80px;
+    img {
+      display: none;
     }
+  }
 
-    &_pages {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
 
-      &_btn {
-        display: flex;
-        align-items: center;
-        gap: 19px;
-        border-radius: 10px;
-        transition: 0.3s;
-        padding: 10px;
-        cursor: pointer;
-      }
+  &__btn:hover {
+    background-color: #f5f5f5;
+  }
 
-      &_btn:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
+  &__btn {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
     }
-    &_line {
-      width: 80%;
-      border-bottom: 1px solid #34373c;
-      margin: 40px 0;
+  }
+
+  &__btn-none:hover {
+    background-color: #f5f5f5;
+  }
+
+  &__btn-none {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    h5 {
+      display: none;
     }
+  }
 
-    &_log-out {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-      &_btn {
-        display: flex;
-        align-items: center;
-        gap: 19px;
-        border-radius: 10px;
-        transition: 0.3s;
-        padding: 10px;
-        cursor: pointer;
-      }
+  &__line {
+    border-bottom: 1px solid black;
+    margin: 40px 0;
+  }
 
-      &_btn:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-      }
-    }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
   }
 }
