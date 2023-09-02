@@ -1,0 +1,138 @@
+.contact {
+  &_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1000px) {
+    &_img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 630px) {
+    &_container_question {
+      display: none;
+    }
+
+    &_container_callMe {
+      display: none;
+    }
+
+    &_container_btnCall {
+      max-width: 200px;
+    }
+  }
+
+  &_container_question {
+    color: var(--2nd-primary-900, #21212f);
+
+    /* Header/Heading - 1 */
+    font-family: Public Sans;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 48px; /* 120% */
+    margin-top: 90px;
+    margin-left: 17%;
+  }
+
+  &_container_callMe {
+    color: var(--gray-600, #52565c);
+
+    /* Body/Body XL */
+    font-family: Public Sans;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; /* 133.333% */
+    margin-top: 21px;
+    margin-left: 26%;
+  }
+
+  &_container_btnCall {
+    color: white;
+    display: flex;
+    width: 410px;
+    height: 50px;
+    padding: 14px 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: #2b59c3;
+    margin-top: 21px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
+
+// -----------------
+// ContactModal.scss
+
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &.open {
+    display: flex;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    form {
+      .input-group {
+        margin-bottom: 15px;
+        label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        input,
+        textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -2,15 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { AppThunk } from "../../../App/rootStore";
 import { baseAPI } from "../../../Shared/baseAPI";
-// import { baseAPI } from "../../../Shared/baseAPI";
 
 interface CourseData {
   name: string;
   description: string;
-  duration: string;
-  videos: number;
-  start: string;
   price: number;
+  duration: number;
+  lectureQuantity: number;
+  courseDirection: string;
+  id?: number;
 }
 
 const initialState: CourseData | null = null;

@@ -24,9 +24,7 @@ const Dashboard = () => {
       >
         <div
           className={`${
-            watch === "/watch"
-              ? "dashboard__logo-none"
-              : "dashboard__logo"
+            watch === "/watch" ? "dashboard__logo-none" : "dashboard__logo"
           }`}
         >
           <img src={logo} alt="" />
@@ -36,9 +34,7 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={home} alt="" />
@@ -47,9 +43,7 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/course-free")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={notebookFree} alt="" />
@@ -58,9 +52,7 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/course-paid")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={notebookPaid} alt="" />
@@ -70,20 +62,16 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/about-us")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={clipboard} alt="" />
             <h5>О нас</h5>
           </div>
           <div
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/favorite")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={heart} alt="" />
@@ -95,9 +83,7 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/admin-page")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={user} alt="" />
@@ -106,9 +92,7 @@ const Dashboard = () => {
           <div
             onClick={() => navigate("/login-page")}
             className={
-              watch === "/watch"
-                ? "dashboard__btn-none"
-                : "dashboard__btn"
+              watch === "/watch" ? "dashboard__btn-none" : "dashboard__btn"
             }
           >
             <img src={login} alt="" />

@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
-import CourseCard from "../../../Entities/Cards/CourseCard";
 import "./PaidCourseListWg.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourse } from "./PaidCourseSliceWg";
-import PaidCourseCard from "../../../Entities/Cards/PaidCourseCard";
+import PaidCourseCard from "../../../Entities/Cards/PaidCourseCard/PaidCourseCard";
 
 const PaidCoursesListWg: React.FC = () => {
   const dispatch = useDispatch();
@@ -16,12 +15,12 @@ const PaidCoursesListWg: React.FC = () => {
 
   const cards = course
     ? course.map((courseItem, index) => ({
-        id: index + 1,
-        title: courseItem.name,
+        id: courseItem.id,
+        name: courseItem.name,
         description: courseItem.description,
+        duration: courseItem.duration,
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
         price: courseItem.price,
-        type: "paid",
       }))
     : [];
 

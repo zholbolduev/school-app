@@ -1,0 +1,125 @@
+.paidCourseCard {
+  width: 300px;
+  height: 330px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--secondary-primary-white, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 90px;
+
+  &_img {
+    background-image: 100%;
+    width: 280px;
+    height: 180px;
+    border-radius: 18px;
+    margin-left: 10px;
+    margin-top: 8px;
+  }
+
+  &_imgHeart {
+    margin: -500px 0px 0px 240px;
+    padding: 20px;
+    align-items: flex-start;
+    gap: 5.926px;
+    border-radius: 8.296px;
+    background: #fff;
+    box-shadow: 0px 2.370370388031006px 11.851852416992188px 0px
+      rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .red-heart {
+    background-image: url("./assets/heart.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gray-heart {
+    background-image: url("./assets/emptyheart.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &_infoBlock {
+    display: flex;
+    flex-direction: column;
+    margin-top: -25px;
+    margin-left: 20px;
+  }
+
+  &_name {
+    width: 264.267px;
+    height: 20.692px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    color: #2b59c3;
+    font-family: Manrope;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 150%; /* 23.283px */
+    letter-spacing: 0.388px;
+  }
+
+  &_desc {
+    width: 251.691px;
+    height: 20px;
+    margin-top: 8px;
+    color: var(--grey-grey-2, #4d4d4d);
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 16px */
+  }
+
+  &_start {
+    margin-top: 10px;
+    width: 89.384px;
+    margin-top: 7px;
+    color: var(--primary-primary-3, #777795);
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 15px */
+  }
+  &_priceBlock {
+    display: flex;
+  }
+
+  &_priceLife {
+    width: 50px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 10px;
+    color: var(--brand-color-2, #fd661f);
+    font-family: Manrope;
+    font-size: 16.681px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 25.022px */
+  }
+
+  &_btnC {
+    color: white;
+    display: flex;
+    border-color: white;
+    padding: 11px 15px;
+    align-items: flex-start;
+    // gap: 10px;
+    border-radius: 8px;
+    background: #2b59c3;
+    margin-left: 110px;
+    margin-top: 0px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

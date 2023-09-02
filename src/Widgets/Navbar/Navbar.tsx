@@ -16,14 +16,11 @@ const Navbar = () => {
   const access = userStorage?.access_token;
 
   const getUser = async () => {
-    const Authorization = `Bearer ${access}`;
+    // const Authorization = `Bearer ${access}`;
     const config = {
-      headers: { Authorization },
+      // headers: { Authorization },
     };
-    const response = await axios.get(
-      `${baseAPI}/user/personal-info`,
-      config
-    );
+    const response = await axios.get(`${baseAPI}/user/personal-info`, config);
 
     setUser(response.data.fullName);
   };
