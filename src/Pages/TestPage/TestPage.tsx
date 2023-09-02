@@ -1,7 +1,9 @@
+import TestWidget from "../../Widgets/TestWidgets/TestWidget";
+
 const TestPage = () => {
     return (
         <div>
-            TestPage
+            <TestWidget />
         </div>
     );
 }
