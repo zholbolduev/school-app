@@ -1,10 +1,10 @@
 interface ICard {
-  title: string;
+  name: string;
   description: string;
-  start: string;
-  price?: string;
-  img: string;
-  type: string;
+  price: number;
+  duration: number;
+  lectureQuantity: number;
+  courseDirection: string;
   id?: number;
 }
 

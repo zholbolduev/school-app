@@ -4,27 +4,33 @@ import {
   ThunkAction,
   Action,
 } from "@reduxjs/toolkit";
-import newCourseReducer from "../Features/AddCourse/NewCourseSlice";
-import { contactListApi } from "../Widgets/AdminWidgets/ConctactList/ContactListQuery";
 import loginReducer from "../Features/AuthFeatures/LoginFeature/LoginFeatureSlice";
 import registerReducer from "../Features/AuthFeatures/RegisterFeature/RegisterFeatureSlice";
 import detailedCourseReducer from "../Widgets/DetailsWidgets/DetailedCourseSlice";
 import courseReducer from "../Widgets/CoursesWidgets/PaidCoursesLIstWg/PaidCourseSliceWg";
+import createFreeCourseReducer from "../Widgets/AdminWidgets/CreateFreeCourse/CreateFreeCourseSlice";
+import createPaidCourseReducer from "../Widgets/AdminWidgets/CreatePaidCourse/CreatePaidCourseSlice";
+import videoLectureReducer from "../Widgets/AdminWidgets/CreateVideoLecture/VideoLectureSlice";
+import videoPlayerReducer from "../Widgets/VideoPlayer/VideoPlayerSlice";
+import contactListReducer from "../Widgets/AdminWidgets/ContactList/ContactListSlice";
+import requestListReducer from "../Widgets/AdminWidgets/RequestList/RequestListSlice";
 
 const rootReducers = combineReducers({
-  [contactListApi.reducerPath]: contactListApi.reducer,
-  newCourseReducer,
   loginReducer,
   registerReducer,
   detailedCourseReducer,
   course: courseReducer,
+  createFreeCourseReducer,
+  createPaidCourseReducer,
+  videoLectureReducer,
+  videoPlayerReducer,
+  contactListReducer,
+  requestListReducer,
 });
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducers,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(contactListApi.middleware),
   });
 };
 

@@ -1,77 +1,136 @@
-import { Video } from "../../Entities/CourseDetailsEntities/Video/MainVideoPlayer";
-import { VideoPlaylist } from "../../Entities/CourseDetailsEntities/Video/VideoPlaylist";
-import { TestButton } from "../../Shared/Buttons/TestButton";
-import { useAppSelector } from "../../Shared/hooks/reduxHooks";
-import { useState, useEffect } from "react";
-import { ICourseData } from "./DetailedCourseSlice";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "../../Shared/hooks/reduxHooks";
+import { useEffect, useState } from "react";
 import "./DetailsWidget.scss";
-import { Description } from "../../Entities/CourseDetailsEntities/Description/Description";
-import { RecomendedVideos } from "../../Entities/CourseDetailsEntities/Video/RecomendedVideos/RecomendedVideos";
-import { Comments } from "../../Entities/CourseDetailsEntities/Comments/Comments";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import { baseAPI } from "../../Shared/baseAPI";
+import { useNavigate, useParams } from "react-router-dom";
+import { BsFillTrashFill } from "react-icons/bs";
+import {
+  getDetailedCourse,
+  patchFreeCourse,
+} from "./DetailedCourseActions";
+import { deleteVideoLecture } from "../AdminWidgets/CreateVideoLecture/PostVideoLecture";
+import { IVideoLecture } from "../AdminWidgets/CreateVideoLecture/VideoLectureSlice";
+import VideoLecturesPopUp from "../VideoLecturesPopUp/VideoLecturesPopUp";
 
 export const FreeDetailsWidget = () => {
-  const [courseData, setCourseData] = useState<ICourseData | null>(
-    null
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { data: freeCourse, success } = useAppSelector(
+    (state) => state.detailedCourseReducer
   );
-
-  const data = useAppSelector(
-    (state) => state.detailedCourseReducer.course
-  );
-
-  useEffect(() => {
-    setCourseData(data);
-  }, [data]);
-
-  const [freeCourse, setFreeCourse] = useState<object>({
-    name: "",
-    description: "",
-  });
-
   const { id } = useParams();
 
-  const getFreeCourse = async () => {
-    const response = await axios.get(
-      `${baseAPI}/user/course/get/${id}`
-    );
-
-    setFreeCourse(response.data);
-  };
-
   useEffect(() => {
-    getFreeCourse();
-  }, []);
+    dispatch(getDetailedCourse(id));
+    setName(freeCourse.name);
+    setDescription(freeCourse.description);
+    setLectureQuantity(freeCourse.lectureQuantity);
+  }, [freeCourse.name]);
+
+  console.log(freeCourse);
+
+  const [patch, setPatch] = useState<boolean>(true);
+  const [popUp, setPopUp] = useState<boolean>(false);
+
+  const [name, setName] = useState<string>(freeCourse.name);
+  const [description, setDescription] = useState<string>(
+    freeCourse.description
+  );
+  const [lectureQuantity, setLectureQuantity] = useState<number>(
+    freeCourse.lectureQuantity
+  );
 
   return (
-    <div className="details-container">
-      <div className="details-top">
-        <h1>{freeCourse.name}</h1>
+    <div className="freeDetails">
+      <div className="freeDetails__information">
+        <div className="freeDetails__information_title">
+          <textarea
+            onChange={(e) => setName(e.target.value)}
+            disabled={patch}
+            value={name}
+          />
+          {patch ? (
+            <button onClick={() => setPatch(false)}>
+              Редактировать
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                setPatch(true);
+                dispatch(
+                  patchFreeCourse(
+                    id,
+                    name,
+                    description,
+                    lectureQuantity
+                  )
+                );
+              }}
+            >
+              Сохранить
+            </button>
+          )}
+        </div>
+        <div className="freeDetails__information_description">
+          <p>Описание:</p>
+          <textarea
+            onChange={(e) => setDescription(e.target.value)}
+            disabled={patch}
+            value={description}
+          />
+        </div>
+        <div className="freeDetails__information_lecture">
+          <p>Количество лекций:</p>
+          <textarea
+            onChange={(e) =>
+              setLectureQuantity(Number(e.target.value))
+            }
+            disabled={patch}
+            value={lectureQuantity}
+          />
+        </div>
+
+        <p>{success}</p>
       </div>
-      <div className="details-center-container">
-        <Video />
-        <div className="details-playlist">
-          <h3>Другие видео курса</h3>
-          <VideoPlaylist />
+
+      <div className="freeDetails__playlist">
+        <div className="freeDetails__playlist_header">
+          <h4>Видео Лекции</h4>
+          <button onClick={() => setPopUp(true)}>Добавить</button>
+          {popUp ? <VideoLecturesPopUp setPopUp={setPopUp} /> : null}
         </div>
-      </div>
-      <div className="details-bottom-container">
-        <div className="details-description">
-          <Description description={freeCourse.description} />
-          <div className="details-buttons">
-            <Link className="details-link" to={"/text-lecture"}>
-              Текстовая лекция
-            </Link>
-            <TestButton />
-          </div>
-          <hr />
-          <Comments currentUserId="1" />
-        </div>
-        <div className="recomendedVideos">
-          <h3>Рекомендации</h3>
-          <RecomendedVideos />
-        </div>
+        {freeCourse.videoLectures.lentgth ? (
+          freeCourse.videoLectures.map((lecture: IVideoLecture) => (
+            <div
+              key={lecture.id}
+              className="freeDetails__playlist_item"
+            >
+              <img
+                onClick={() => navigate(`/watch/${lecture.id}`)}
+                src="https://images.pexels.com/photos/2385044/pexels-photo-2385044.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                alt="video-preview"
+              />
+              <div className="playlist__item">
+                <div className="playlist__item_title">
+                  <h5>{lecture.title}</h5>
+                  <div
+                    onClick={() =>
+                      dispatch(deleteVideoLecture(lecture.id))
+                    }
+                    className="playlist__item_icon"
+                  >
+                    <BsFillTrashFill />
+                  </div>
+                </div>
+                <p>{lecture.description}</p>
+              </div>
+            </div>
+          ))
+        ) : (
+          <h5>Видео лекций нет</h5>
+        )}
       </div>
     </div>
   );

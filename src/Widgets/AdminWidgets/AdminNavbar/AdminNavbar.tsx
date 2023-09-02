@@ -5,17 +5,20 @@ const AdminNavbar = () => {
   const navigate = useNavigate();
   return (
     <div className="adminNavbar">
-      <button onClick={() => navigate("create-course")}>
-        CRUD COURSES
+      <button onClick={() => navigate("create-free")}>
+        создать курс(бесплатный)
       </button>
-      <button onClick={() => navigate("comment-list")}>
-        Comment List
+      <button onClick={() => navigate("create-paid")}>
+        создать курс(платный)
+      </button>
+      <button onClick={() => navigate("create-video-lecture")}>
+        создать видео-лекцию
       </button>
       <button onClick={() => navigate("contact-list")}>
-        Conctact List
+        список обращений
       </button>
       <button onClick={() => navigate("request-list")}>
-        Request List
+        список заявок
       </button>
     </div>
   );

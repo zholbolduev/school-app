@@ -11,6 +11,16 @@ body {
   background-color: #f5f5f5;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.app__layout-none {
+  display: grid;
+  grid-template-columns: 6% 94%;
+}
+
 .app__layout {
   display: grid;
   grid-template-columns: 19.5% 80.5%;

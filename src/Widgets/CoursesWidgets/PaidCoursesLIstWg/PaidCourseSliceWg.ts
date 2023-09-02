@@ -6,10 +6,11 @@ import { baseAPI } from "../../../Shared/baseAPI";
 interface CourseData {
   name: string;
   description: string;
-  duration: string;
-  videos: number;
-  start: string;
   price: number;
+  duration: number;
+  lectureQuantity: number;
+  courseDirection: string;
+  id?: number;
 }
 
 const initialState: CourseData | null = null;
