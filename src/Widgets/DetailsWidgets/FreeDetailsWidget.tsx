@@ -29,8 +29,6 @@ export const FreeDetailsWidget = () => {
     setLectureQuantity(freeCourse.lectureQuantity);
   }, [freeCourse.name]);
 
-  console.log(freeCourse);
-
   const [patch, setPatch] = useState<boolean>(true);
   const [popUp, setPopUp] = useState<boolean>(false);
 
@@ -99,9 +97,15 @@ export const FreeDetailsWidget = () => {
         <div className="freeDetails__playlist_header">
           <h4>Видео Лекции</h4>
           <button onClick={() => setPopUp(true)}>Добавить</button>
-          {popUp ? <VideoLecturesPopUp setPopUp={setPopUp} /> : null}
+          {popUp ? (
+            <VideoLecturesPopUp
+              courseId={id}
+              courseVideoLectures={freeCourse.videoLectures}
+              setPopUp={setPopUp}
+            />
+          ) : null}
         </div>
-        {freeCourse.videoLectures.lentgth ? (
+        {freeCourse.videoLectures.length !== 0 ? (
           freeCourse.videoLectures.map((lecture: IVideoLecture) => (
             <div
               key={lecture.id}
@@ -117,7 +121,7 @@ export const FreeDetailsWidget = () => {
                   <h5>{lecture.title}</h5>
                   <div
                     onClick={() =>
-                      dispatch(deleteVideoLecture(lecture.id))
+                      dispatch(deleteVideoLecture(lecture.id, id))
                     }
                     className="playlist__item_icon"
                   >
@@ -129,7 +133,7 @@ export const FreeDetailsWidget = () => {
             </div>
           ))
         ) : (
-          <h5>Видео лекций нет</h5>
+          <h6>Видео лекций нет</h6>
         )}
       </div>
     </div>

@@ -1,0 +1,31 @@
+.test-comment {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    width: 600px;
+    height: 100vh;
+    border: 1px solid;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    overflow: hidden;
+    overflow-y: scroll;
+  }
+
+  .test-userComment__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .test-comment__item {
+      padding: 10px;
+      border: 1px solid;
+    }
+  }
+}
+
+.pl60 {
+  margin-left: 60px;
+}

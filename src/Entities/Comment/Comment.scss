@@ -1,0 +1,67 @@
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__item {
+    display: flex;
+    gap: 16px;
+
+    &_right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .comment__information {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        h5 {
+          color: #000;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .comment__actions {
+        display: flex;
+        gap: 20px;
+
+        button {
+          background-color: transparent;
+          font-weight: 700;
+        }
+
+        &_answer {
+          cursor: auto;
+        }
+      }
+    }
+  }
+
+  &__showReplies {
+    padding-left: 60px;
+    display: flex;
+    align-items: center;
+    color: #2b59c3;
+    background-color: transparent;
+    font-weight: 700;
+    .comment__arrow-icon {
+      font-size: 20px;
+    }
+  }
+
+  .reply__list {
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__area {
+    padding-left: 60px;
+  }
+}

@@ -5,6 +5,7 @@ import {
   videoLectureSlice,
 } from "./VideoLectureSlice";
 import { baseAPI } from "../../../Shared/baseAPI";
+import { getDetailedCourse } from "../../DetailsWidgets/DetailedCourseActions";
 
 export const postVideoLecture =
   (title: string, description: string, link: string) =>
@@ -31,20 +32,22 @@ export const postVideoLecture =
   };
 
 export const deleteVideoLecture =
-  (id: string) => async (dispatch: AppDispatch) => {
+  (lectureId: string, courseId: string | undefined) =>
+  async (dispatch: AppDispatch) => {
     try {
       dispatch(videoLectureSlice.actions.setLoading());
 
-      await axios.delete(`${baseAPI}/l/v/delete/${id}`);
+      await axios.delete(`${baseAPI}/l/v/delete/${lectureId}`);
 
-      dispatch(getCourseLectures());
+      dispatch(getDetailedCourse(courseId));
     } catch (error) {
       console.log(error);
     }
   };
 
 export const getCourseLectures =
-  () => async (dispatch: AppDispatch) => {
+  (courseVideoLectures: IVideoLecture) =>
+  async (dispatch: AppDispatch) => {
     try {
       dispatch(videoLectureSlice.actions.setLoading());
 
@@ -52,7 +55,25 @@ export const getCourseLectures =
         `${baseAPI}/l/v/get/all`
       );
 
-      dispatch(videoLectureSlice.actions.setData(response.data));
+      const filtedVideoLectures = courseVideoLectures
+        .filter(
+          (item1: IVideoLecture) =>
+            !response.data.some(
+              (item2: IVideoLecture) => item1.id === item2.id
+            )
+        )
+        .concat(
+          response.data.filter(
+            (item2: IVideoLecture) =>
+              !courseVideoLectures.some(
+                (item1: IVideoLecture) => item2.id === item1.id
+              )
+          )
+        );
+
+      dispatch(
+        videoLectureSlice.actions.setData(filtedVideoLectures)
+      );
     } catch (error: any) {
       dispatch(videoLectureSlice.actions.setError(error.message));
     }

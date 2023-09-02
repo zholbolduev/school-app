@@ -1,0 +1,44 @@
+.reply {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__item {
+    display: flex;
+    gap: 16px;
+
+    .reply__right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .reply__information {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        h5 {
+          color: #000;
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .reply__actions {
+        display: flex;
+        gap: 20px;
+
+        &_answer {
+          cursor: auto;
+        }
+
+        button {
+          background-color: transparent;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -8,13 +8,18 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { IVideoLecture } from "../AdminWidgets/CreateVideoLecture/VideoLectureSlice";
 import { RxCrossCircled } from "react-icons/rx";
+import { mergeVideoLecture } from "./VideoLecturesAction";
 
 interface IVideoLecturesPopUpProps {
   setPopUp: (boolean: boolean) => void;
+  courseVideoLectures: IVideoLecture;
+  courseId: string | undefined;
 }
 
 const VideoLecturesPopUp: React.FC<IVideoLecturesPopUpProps> = ({
   setPopUp,
+  courseVideoLectures,
+  courseId,
 }: IVideoLecturesPopUpProps) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -24,8 +29,9 @@ const VideoLecturesPopUp: React.FC<IVideoLecturesPopUpProps> = ({
   );
 
   useEffect(() => {
-    dispatch(getCourseLectures());
+    dispatch(getCourseLectures(courseVideoLectures));
   }, []);
+
   return (
     <div
       className="videoLecturesPopUp"
@@ -44,24 +50,31 @@ const VideoLecturesPopUp: React.FC<IVideoLecturesPopUpProps> = ({
             </div>
           </div>
           <div className="videoLecturesPopUp__playlist_list">
-            {videoLectures.map((lecture: IVideoLecture) => (
-              <div
-                key={lecture.id}
-                className="videoLecturesPopUp__playlist_item"
-              >
-                <img
-                  onClick={() => navigate(`/watch/${lecture.id}`)}
-                  src="https://images.pexels.com/photos/2385044/pexels-photo-2385044.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-                  alt="video-preview"
-                />
-                <div className="playlist__item">
-                  <div className="playlist__item_title">
-                    <h5>{lecture.title}</h5>
+            {videoLectures.length === 0 ? (
+              <h6>Видео лекций нет</h6>
+            ) : (
+              videoLectures.map((lecture: IVideoLecture) => (
+                <div
+                  onClick={() =>
+                    mergeVideoLecture(courseId, lecture.id)
+                  }
+                  key={lecture.id}
+                  className="videoLecturesPopUp__playlist_item"
+                >
+                  <img
+                    onClick={() => navigate(`/watch/${lecture.id}`)}
+                    src="https://images.pexels.com/photos/2385044/pexels-photo-2385044.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                    alt="video-preview"
+                  />
+                  <div className="playlist__item">
+                    <div className="playlist__item_title">
+                      <h5>{lecture.title}</h5>
+                    </div>
+                    <p>{lecture.description}</p>
                   </div>
-                  <p>{lecture.description}</p>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </div>

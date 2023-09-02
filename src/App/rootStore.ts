@@ -14,6 +14,7 @@ import videoLectureReducer from "../Widgets/AdminWidgets/CreateVideoLecture/Vide
 import videoPlayerReducer from "../Widgets/VideoPlayer/VideoPlayerSlice";
 import contactListReducer from "../Widgets/AdminWidgets/ContactList/ContactListSlice";
 import requestListReducer from "../Widgets/AdminWidgets/RequestList/RequestListSlice";
+import commentReducer from "../Widgets/VideoPlayer/CommentSlice";
 
 const rootReducers = combineReducers({
   loginReducer,
@@ -26,6 +27,7 @@ const rootReducers = combineReducers({
   videoPlayerReducer,
   contactListReducer,
   requestListReducer,
+  commentReducer,
 });
 
 export const setupStore = () => {
