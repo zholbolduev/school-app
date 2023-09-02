@@ -3,4 +3,5 @@ export interface IFreeCard {
   description: string;
   img?: string;
   id: number;
+  courseType?: string;
 }

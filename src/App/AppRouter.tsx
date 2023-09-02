@@ -12,7 +12,6 @@ import AboutUsPage from "../Pages/AboutUsPage/AboutUsPage";
 import CourseVideoPage from "../Pages/Courses/CourseVideoPage/CourseVideoPage";
 import Lecture from "../Pages/LectureTextPage/Lecture";
 import TestPage from "../Pages/TestPage/TestPage";
-import PaidCourseCard from "../Entities/Cards/PaidCourseCard/PaidCourseCard";
 import FavoritePage from "../Pages/FavoritePage/FavoritePage";
 import EditPage from "../Pages/EditPage/EditPage";
 import AdminPage from "../Pages/AdminPage/AdminPage";
@@ -20,6 +19,8 @@ import CreateFreeCourse from "../Widgets/AdminWidgets/CreateFreeCourse/CreateFre
 import CreatePaidCourse from "../Widgets/AdminWidgets/CreatePaidCourse/CreatePaidCourse";
 import ContactList from "../Widgets/AdminWidgets/ContactList/ContactList";
 import RequestList from "../Widgets/AdminWidgets/RequestList/RequestList";
+import VideoPlayer from "../Widgets/VideoPlayer/VideoPlayer";
+import CreateVideoLecture from "../Widgets/AdminWidgets/CreateVideoLecture/CreateVideoLecture";
 
 const AppRouter = () => {
   return (
@@ -31,6 +32,7 @@ const AppRouter = () => {
           <Route path="create-paid" element={<CreatePaidCourse />} />
           <Route path="contact-list" element={<ContactList />} />
           <Route path="request-list" element={<RequestList />} />
+          <Route path="create-video-lecture" element={<CreateVideoLecture />} />
         </Route>
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/profile-page" element={<ProfilePage />} />
@@ -39,6 +41,7 @@ const AppRouter = () => {
         <Route path="/course-paid" element={<PaidCoursePage />} />
         <Route path="/favorite" element={<FavoritePage />} />
         <Route path="/course-free-details/:id" element={<CourseVideoPage />} />
+        <Route path="/watch/:id" element={<VideoPlayer />} />
         <Route path="/course-free-edit/:id" element={<EditPage />} />
         <Route path="/test-page" element={<TestPage />} />
         <Route path="/text-lecture" element={<Lecture />} />

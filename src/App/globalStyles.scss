@@ -16,6 +16,11 @@ button {
   border: none;
 }
 
+.app__layout-none {
+  display: grid;
+  grid-template-columns: 6% 94%;
+}
+
 .app__layout {
   display: grid;
   grid-template-columns: 19.5% 80.5%;

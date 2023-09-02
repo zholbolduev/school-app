@@ -10,6 +10,10 @@ import detailedCourseReducer from "../Widgets/DetailsWidgets/DetailedCourseSlice
 import courseReducer from "../Widgets/CoursesWidgets/PaidCoursesLIstWg/PaidCourseSliceWg";
 import createFreeCourseReducer from "../Widgets/AdminWidgets/CreateFreeCourse/CreateFreeCourseSlice";
 import createPaidCourseReducer from "../Widgets/AdminWidgets/CreatePaidCourse/CreatePaidCourseSlice";
+import videoLectureReducer from "../Widgets/AdminWidgets/CreateVideoLecture/VideoLectureSlice";
+import videoPlayerReducer from "../Widgets/VideoPlayer/VideoPlayerSlice";
+import contactListReducer from "../Widgets/AdminWidgets/ContactList/ContactListSlice";
+import requestListReducer from "../Widgets/AdminWidgets/RequestList/RequestListSlice";
 
 const rootReducers = combineReducers({
   loginReducer,
@@ -18,6 +22,10 @@ const rootReducers = combineReducers({
   course: courseReducer,
   createFreeCourseReducer,
   createPaidCourseReducer,
+  videoLectureReducer,
+  videoPlayerReducer,
+  contactListReducer,
+  requestListReducer,
 });
 
 export const setupStore = () => {

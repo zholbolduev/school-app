@@ -18,12 +18,12 @@ const ContactBtn = () => {
     <div className="contact">
       <div className="contact_container">
         <div>
-          <img src={contactImg} alt="" />
+          <img className="contact_img" src={contactImg} alt="" />
         </div>
         <div>
           <h3 className="contact_container_question">Есть вопросы?</h3>
           <p className="contact_container_callMe">Свяжитесь с нами.</p>
-          <button className="contact_container_btn" onClick={openModal}>
+          <button className="contact_container_btnCall" onClick={openModal}>
             Связаться
           </button>
         </div>

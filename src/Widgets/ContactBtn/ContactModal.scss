@@ -26,26 +26,42 @@
     line-height: normal;
   }
 
+  &_close {
+    display: flex;
+    margin-top: -35px;
+    margin-left: 400px;
+    font-size: 23px;
+    background-color: white;
+  }
+
   &_name {
     display: flex;
     width: 410px;
-    padding: 16px 340px 16px 24px;
+    height: 60px;
     align-items: center;
+    font-size: 20px;
     border-radius: 8px;
     border: 1px solid #7c7c7c;
     background: #fff;
     margin-top: 10px;
+    padding-left: 16px;
   }
 
-  &_email {
+  &_number {
     display: flex;
     width: 410px;
-    padding: 16px 340px 16px 24px;
+    height: 60px;
     align-items: center;
     border-radius: 8px;
+    font-size: 20px;
     border: 1px solid #af9c9c;
     background: #fff;
     margin-top: 10px;
+    padding-left: 16px;
+  }
+
+  input::placeholder {
+    width: 300px;
   }
 
   &_btn {

@@ -1,19 +1,19 @@
 .paidCourseCard {
-  width: 296px;
-  height: 428px;
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0px 10px 60px 0px rgba(38, 45, 118, 0.08);
+  width: 300px;
+  height: 330px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--secondary-primary-white, #fff);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 90px;
 
   &_img {
     background-image: 100%;
-    width: 295px;
-    height: 179px;
-    border-radius: 14px 14px 0px 0px;
+    width: 280px;
+    height: 180px;
+    border-radius: 18px;
+    margin-left: 10px;
+    margin-top: 8px;
   }
 
   &_imgHeart {
@@ -46,13 +46,40 @@
   &_infoBlock {
     display: flex;
     flex-direction: column;
-    margin: 47px 9px 20px 17.5px;
+    margin-top: -25px;
+    margin-left: 20px;
+  }
+
+  &_name {
+    width: 264.267px;
+    height: 20.692px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    color: #2b59c3;
+    font-family: Manrope;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 150%; /* 23.283px */
+    letter-spacing: 0.388px;
+  }
+
+  &_desc {
+    width: 251.691px;
+    height: 20px;
+    margin-top: 8px;
+    color: var(--grey-grey-2, #4d4d4d);
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 16px */
   }
 
   &_start {
+    margin-top: 10px;
     width: 89.384px;
-    margin-top: -55px;
-
+    margin-top: 7px;
     color: var(--primary-primary-3, #777795);
     font-family: Manrope;
     font-size: 14px;
@@ -60,45 +87,15 @@
     font-weight: 400;
     line-height: 150%; /* 15px */
   }
-
-  &_name {
-    width: 264.267px;
-    height: 53.692px;
-    flex-shrink: 0;
-
-    margin-top: 8px;
-
-    color: #2b59c3;
-    font-family: Manrope;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 150%; /* 23.283px */
-    letter-spacing: 0.388px;
-  }
-
-  &_desc {
-    margin-top: -20px;
-    width: 251.691px;
-    height: 90px;
-
-    color: var(--grey-grey-2, #4d4d4d);
-    font-family: Manrope;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 16px */
-  }
   &_priceBlock {
     display: flex;
-    margin-top: 37px;
   }
 
   &_priceLife {
     width: 50px;
     height: 24px;
     flex-shrink: 0;
-
+    margin-top: 10px;
     color: var(--brand-color-2, #fd661f);
     font-family: Manrope;
     font-size: 16.681px;
@@ -107,160 +104,19 @@
     line-height: 150%; /* 25.022px */
   }
 
-  &_priceNo {
-    width: 47.68px;
-    height: 22px;
-    flex-shrink: 0;
-
-    color: var(--black, #230f0f);
-    font-family: Manrope;
-    font-size: 14.828px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 22.242px */
-    margin-top: 2px;
-    margin-left: -14px;
-  }
-
-  &_btn {
+  &_btnC {
     color: white;
     display: flex;
     border-color: white;
-    padding: 10px 20px;
+    padding: 11px 15px;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 5px;
+    // gap: 10px;
+    border-radius: 8px;
     background: #2b59c3;
-    margin-left: 65px;
-    margin-top: -10px;
+    margin-left: 110px;
+    margin-top: 0px;
     border: none;
     cursor: pointer;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-}
-
-// ---------------------------------------------MODAl----------------------------------------------------------
-
-.overlay {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal {
-  width: 933px;
-  height: 551px;
-  flex-shrink: 0;
-
-  border-radius: 10px;
-  background: var(--unnamed, #fff);
-  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.15);
-
-  &_x {
-    margin-left: 900px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-
-  h2 {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: var(--unnamed, #000);
-    font-family: Manrope;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 28px; /* 70% */
-  }
-
-  &_generalBlock {
-    display: flex;
-    margin-top: 82px;
-    margin-left: 55px;
-  }
-
-  &_inpBlock {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &_name {
-    width: 266.332px;
-    height: 74.573px;
-    flex-shrink: 0;
-
-    border-radius: 28px;
-    background: var(--unnamed, #f5f5f5);
-    border: none;
-    padding-left: 71px;
-    font-size: 24px;
-  }
-
-  &_surname {
-    width: 318.601px;
-    height: 74.573px;
-    flex-shrink: 0;
-
-    border-radius: 28px;
-    background: var(--unnamed, #f5f5f5);
-    margin-top: 20px;
-    border: none;
-    padding-left: 71px;
-    font-size: 24px;
-  }
-
-  &_number {
-    width: 372.864px;
-    height: 74.573px;
-    flex-shrink: 0;
-
-    border-radius: 28px;
-    background: var(--unnamed, #f5f5f5);
-    margin-top: 20px;
-    border: none;
-    padding-left: 71px;
-    font-size: 24px;
-  }
-
-  &_nameCourse {
-    color: #222;
-    font-family: Manrope;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    text-align: center;
-    margin-top: -50px;
-  }
-
-  &_descCourse {
-    margin-top: 40px;
-    font-size: 20px;
-    width: 400px;
-    margin-left: 60px;
-  }
-
-  &_btn {
-    width: 200px;
-    height: 50px;
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: 650px;
 
     &:hover {
       background-color: #0056b3;

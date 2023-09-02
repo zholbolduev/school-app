@@ -1,62 +1,18 @@
-.freeDetails {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.videoLecturesPopUp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
 
-  textarea {
-    border: none;
-    background-color: transparent;
-    resize: none;
-    overflow: hidden;
-  }
-
-  h4 {
-    color: #000;
-    font-size: 36px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  &__information {
-    padding: 20px;
+  &__container {
+    width: 100;
+    height: 100%;
+    padding: 30px;
     background-color: white;
     border-radius: 10px;
-
-    &_title {
-      display: grid;
-      grid-template-columns: 80% 20%;
-      align-items: center;
-      textarea {
-        color: #000;
-        font-size: 48px;
-        height: 80px;
-        font-weight: 700;
-      }
-
-      button {
-        width: fit-content;
-        height: fit-content;
-        padding: 10px 20px;
-        color: #fff;
-        font-size: 16px;
-        font-weight: 700;
-        border-radius: 10px;
-        background: #2b59c3;
-        justify-self: flex-end;
-      }
-    }
-
-    &_description,
-    &_lecture {
-      p {
-        font-weight: 700;
-      }
-
-      textarea {
-        width: 100%;
-        font-size: 18px;
-      }
-    }
   }
 
   &__playlist {
@@ -67,10 +23,24 @@
     flex-direction: column;
     gap: 20px;
 
-    h5 {
-      text-align: center;
-      margin: 50px 0;
-      font-size: 36px;
+    &_list {
+      overflow: hidden;
+      overflow-y: scroll;
+      max-height: 400px;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: #2b59c3;
+        border-radius: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+      }
     }
 
     &_header {
@@ -86,6 +56,11 @@
         font-weight: 700;
         border-radius: 10px;
         background: #2b59c3;
+      }
+
+      div {
+        font-size: 30px;
+        cursor: pointer;
       }
     }
 

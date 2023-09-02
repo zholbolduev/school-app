@@ -11,6 +11,9 @@ const AdminNavbar = () => {
       <button onClick={() => navigate("create-paid")}>
         создать курс(платный)
       </button>
+      <button onClick={() => navigate("create-video-lecture")}>
+        создать видео-лекцию
+      </button>
       <button onClick={() => navigate("contact-list")}>
         список обращений
       </button>

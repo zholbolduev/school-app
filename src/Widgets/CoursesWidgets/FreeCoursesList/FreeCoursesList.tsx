@@ -14,11 +14,15 @@ const FreeCoursesList: React.FC = () => {
     const response = await axios.get<IFreeCard[]>(
       `${baseAPI}/user/course/free/get/all?courseType=FREE`
     );
-    setCourses(response.data);
+    const filterCourses = response.data.filter(
+      (data) => data.courseType === "FREE"
+    );
+    setCourses(filterCourses);
   };
   useEffect(() => {
     getCourses();
   }, []);
+
   return (
     <div className="freeCourseList">
       <h2>Бесплатные курсы</h2>

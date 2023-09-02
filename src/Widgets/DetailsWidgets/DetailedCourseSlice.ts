@@ -1,40 +1,57 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface IDetailedCourse {
-    course: ICourseData,
-    isLoading: boolean,
-    error: string 
-}
+import { IFetch } from "../../Shared/types";
 
 export interface ICourseData {
-    type: string,
-    name: string,
-    description: string;
-    videos: [number, number];
+  id: number;
+  name: string;
+  description: string;
+  courseType: string;
+  lectures: string[];
+  videoLectures: string[];
+  lectureQuantity: number;
+  duration: number;
+  courseDirection: string;
+  file: string;
 }
 
-const initialState: IDetailedCourse = {
-    course: {
-        type: 'Бесплатный',
-        name: 'JavaScript для начинающих',
-        description: 'JavaScript - мощный язык программирования, используемый для создания интерактивных и динамических веб-приложений. Он позволяет добавлять функциональность и взаимодействие на веб-страницах, делая пользовательский опыт более увлекательным и удобным.',
-        videos: [1, 2]
-    },
-    isLoading: false,
-    error: ''
-} 
+const initialState: IFetch = {
+  loading: false,
+  data: {
+    id: 0,
+    name: "",
+    description: "",
+    courseType: "",
+    lectures: [],
+    videoLectures: [],
+    lectureQuantity: 0,
+    duration: 0,
+    courseDirection: "",
+    file: "",
+  },
+  success: "",
+  error: "",
+};
 
 export const detailedCourseSlice = createSlice({
-    name: "detailedCourseSlice",
-    initialState,
-    reducers: {
-        setCourse: (state, action: PayloadAction<ICourseData>) => {
-            state.course = action.payload;
-        },
-        setError: (state, action: PayloadAction<string>) => {
-            state.error = action.payload;
-        }
-    }
+  name: "detailedCourseSlice",
+  initialState,
+  reducers: {
+    setIsLoading(state) {
+      state.loading = true;
+    },
+    setData(state, action: PayloadAction<ICourseData>) {
+      state.error = "";
+      state.loading = false;
+      state.data = action.payload;
+    },
+    setSuccess(state, action: PayloadAction<string>) {
+      state.success = action.payload;
+    },
+    setError(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.error = action.payload;
+    },
+  },
 });
 
 export default detailedCourseSlice.reducer;

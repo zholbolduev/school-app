@@ -1,6 +1,6 @@
 import Banner from "../../Widgets/Banner/Banner";
 import ContactBtn from "../../Widgets/ContactBtn/ContactBtn";
-import FreeCoursesList from "../../Widgets/CoursesWidgets/FreeCoursesListWg/FreeCoursesList";
+import FreeCoursesList from "../../Widgets/CoursesWidgets/FreeCoursesList/FreeCoursesList";
 import "./FreeCoursePage.scss";
 
 const FreeCoursePage = () => {

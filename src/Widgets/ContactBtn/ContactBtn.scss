@@ -2,6 +2,27 @@
   &_container {
     display: flex;
     align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1000px) {
+    &_img {
+      display: none;
+    }
+  }
+
+  @media (max-width: 630px) {
+    &_container_question {
+      display: none;
+    }
+
+    &_container_callMe {
+      display: none;
+    }
+
+    &_container_btnCall {
+      max-width: 200px;
+    }
   }
 
   &_container_question {
@@ -30,7 +51,7 @@
     margin-left: 26%;
   }
 
-  &_container_btn {
+  &_container_btnCall {
     color: white;
     display: flex;
     width: 410px;
