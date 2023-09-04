@@ -1,0 +1,14 @@
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prevBtn,
+.nextBtn {
+    padding: 8px 16px;
+    background-color: #2b59c3;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+}

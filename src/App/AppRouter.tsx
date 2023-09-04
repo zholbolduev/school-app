@@ -43,7 +43,7 @@ const AppRouter = () => {
         <Route path="/course-free-details/:id" element={<CourseVideoPage />} />
         <Route path="/watch/:id" element={<VideoPlayer />} />
         <Route path="/course-free-edit/:id" element={<EditPage />} />
-        <Route path="/test-page" element={<TestPage />} />
+        <Route path="/test/:id" element={<TestPage />} />
         <Route path="/text-lecture" element={<Lecture />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
