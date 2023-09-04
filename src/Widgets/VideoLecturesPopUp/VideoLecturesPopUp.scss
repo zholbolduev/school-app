@@ -13,6 +13,7 @@
     padding: 30px;
     background-color: white;
     border-radius: 10px;
+    min-height: 600px;
   }
 
   &__playlist {
@@ -27,6 +28,7 @@
       overflow: hidden;
       overflow-y: scroll;
       max-height: 400px;
+
 
       &::-webkit-scrollbar {
         width: 8px;

@@ -1,0 +1,53 @@
+.commentArea {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__btn-enabled {
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+    color: black;
+    font-weight: 700;
+  }
+
+  &__btn-disabled {
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+    color: #676767;
+    cursor: auto;
+  }
+
+  &__top {
+    display: flex;
+    gap: 16px;
+
+    textarea {
+      width: 100%;
+      background-color: transparent;
+      resize: none;
+      border: none;
+      outline: none;
+      font-size: 18px;
+      padding: 10px;
+    }
+
+    textarea:focus {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+
+    .commentArea__cancel {
+      background-color: transparent;
+      font-weight: 700;
+    }
+  }
+}

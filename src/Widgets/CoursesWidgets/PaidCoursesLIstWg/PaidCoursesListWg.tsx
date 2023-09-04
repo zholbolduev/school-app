@@ -21,6 +21,7 @@ const PaidCoursesListWg: React.FC = () => {
         duration: courseItem.duration,
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtME2Ho74uhChIuase5oqeJujVV-wmBEAWAg&usqp=CAU",
         price: courseItem.price,
+        lectureQuantity: courseItem.lectureQuantity,
       }))
     : [];
 

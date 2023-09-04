@@ -42,6 +42,7 @@ const EditMode = ({ formData, handleInputChange, handleSaveClick }) => {
           onChange={handleInputChange}
         />
       </div>
+
       <button className="profileWidgets_btnSave" onClick={handleSaveClick}>
         Сохранить
       </button>

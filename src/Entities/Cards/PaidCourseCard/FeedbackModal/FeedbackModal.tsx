@@ -3,6 +3,7 @@ import axios from "axios";
 import "./FeedbackModal.scss";
 import "../PaidCourseCard.scss";
 import { baseAPI } from "../../../../Shared/baseAPI";
+import "../paidTypes";
 
 const FeedbackModal = ({ card, closeModal }) => {
   const [fullName, setFullName] = useState("");
@@ -44,6 +45,21 @@ const FeedbackModal = ({ card, closeModal }) => {
         </div>
         <h2>Записаться на курс</h2>
         <div className="modal_generalBlock">
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "270px",
+            }}
+          >
+            <span className="modal_nameCourse">{card.name}</span>
+            <span className="modal_descCourse">{card.description}</span>
+            <span className="modal_descCourse">
+              {card.lectureQuantity} Лекции
+            </span>
+            <span className="modal_descCourse">{card.duration} Месяца</span>
+            <span className="modal_descCourse">{card.price}сом в месяц</span>
+          </div>
           <div className="modal_inpBlock">
             <input
               className="modal_name"
@@ -57,15 +73,6 @@ const FeedbackModal = ({ card, closeModal }) => {
               placeholder="Номер"
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span className="modal_nameCourse">{card.name}</span>
-            <span className="modal_descCourse">{card.description}</span>
-            <span className="modal_descCourse">
-              {card.lectureQuantity} Лекции
-            </span>
-            <span className="modal_descCourse">{card.duration} Месяца</span>
-            <span className="modal_descCourse">{card.price}сом в месяц</span>
           </div>
         </div>
         <button className="modal_btn" onClick={handleSubmit}>
