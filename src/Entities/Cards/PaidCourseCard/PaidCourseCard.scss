@@ -1,11 +1,22 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&family=Poppins:wght@600&display=swap")
+    format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
 .paidCourseCard {
   width: 300px;
-  height: 330px;
+  height: 340px;
   flex-shrink: 0;
   border-radius: 20px;
   background: var(--secondary-primary-white, #fff);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 90px;
 
   &_img {
     background-image: 100%;
@@ -50,57 +61,62 @@
     margin-left: 20px;
   }
 
-  &_name {
-    width: 264.267px;
-    height: 20.692px;
-    flex-shrink: 0;
+  .cardName {
     margin-top: 8px;
-    color: #2b59c3;
-    font-family: Manrope;
-    font-size: 19px;
+    color: var(--dark, #161616);
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
     font-style: normal;
-    font-weight: bold;
-    line-height: 150%; /* 23.283px */
-    letter-spacing: 0.388px;
+    font-weight: 500;
+    line-height: normal;
   }
 
-  &_desc {
-    width: 251.691px;
-    height: 20px;
-    margin-top: 8px;
-    color: var(--grey-grey-2, #4d4d4d);
-    font-family: Manrope;
-    font-size: 14px;
+  .cardDesc {
+    height: 55px;
+    max-width: 260px;
+    margin-top: 5px;
+    color: var(--dark, #161616);
+    font-family: "Manrope", sans-serif;
+    opacity: 0.7;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 16px */
+    font-weight: 500;
+    line-height: 1.1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 4.2em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Устанавливаем максимальное количество строк */
+    -webkit-box-orient: vertical;
   }
 
-  &_start {
-    margin-top: 10px;
-    width: 89.384px;
-    margin-top: 7px;
-    color: var(--primary-primary-3, #777795);
-    font-family: Manrope;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%; /* 15px */
+  /* Добавляем стили для троеточий внизу */
+  .desc::after {
+    content: "...";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 12px; /* Расстояние между текстом и троеточиями */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white 30%);
   }
+
   &_priceBlock {
     display: flex;
+    margin-top: 6px;
   }
 
-  &_priceLife {
+  .cardPrice {
     width: 50px;
     height: 24px;
     flex-shrink: 0;
     margin-top: 10px;
     color: var(--brand-color-2, #fd661f);
-    font-family: Manrope;
-    font-size: 16.681px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 19.681px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 150%; /* 25.022px */
   }
 

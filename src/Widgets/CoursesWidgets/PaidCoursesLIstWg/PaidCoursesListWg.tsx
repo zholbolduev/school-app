@@ -27,7 +27,7 @@ const PaidCoursesListWg: React.FC = () => {
   return (
     <div className="PaidCourseList">
       <h2>Платные курсы</h2>
-      <div className="freeCourseList__wrapper">
+      <div className="PaidCourseList__wrapper">
         {cards.map((cours) => (
           <PaidCourseCard key={cours.id} card={cours} />
         ))}

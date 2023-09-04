@@ -32,11 +32,10 @@ const PaidCourseCard: React.FC<IProps> = ({ card }: IProps) => {
         <FavoriteButton card={card} />
       </div>
       <div className="paidCourseCard_infoBlock">
-        <span className="paidCourseCard_name">{card.name}</span>
-        <span className="paidCourseCard_desc">{card.description}</span>
-        <span className="paidCourseCard_start">{card.duration} месяц</span>
+        <span className="cardName">{card.name}</span>
+        <span className="cardDesc">{card.description}</span>
         <div className="paidCourseCard_priceBlock">
-          <span className="paidCourseCard_priceLife">{card.price}</span>
+          <span className="cardPrice">{card.price}</span>
           <button onClick={openModal} className="paidCourseCard_btnC">
             Записаться
           </button>
